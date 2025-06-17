@@ -8,28 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0a192f; color: #ccd6f6; }
-        .section-title {
-            font-size: 1.875rem; /* text-3xl */
-            font-weight: 700; /* font-bold */
-            color: #f1f5f9; /* text-gray-100 */
-            margin-bottom: 3rem; /* mb-12 */
-            text-align: center;
-        }
-        .card {
-            background-color: #112240;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.1), 0 4px 6px -4px rgba(16, 185, 129, 0.1); /* shadow-lg */
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-        .card:hover {
-            box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.2), 0 8px 10px -6px rgba(16, 185, 129, 0.2); /* shadow-2xl */
-            transform: translateY(-0.5rem);
-        }
-        .accent-text { color: #64ffda; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="text-gray-300">
     <!-- Header -->
@@ -86,6 +65,35 @@
                 <div id="blog-post-view" style="display:none;"></div>
             </div>
         </aside>
+
+        <div class="flex justify-end mb-6">
+            <button id="new-post-btn" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-2 rounded-md hover:bg-teal-400/20 transition-colors text-lg">New Blog Post</button>
+        </div>
+        <div id="new-post-form-container" class="max-w-3xl mx-auto mb-8" style="display:none;">
+            <form id="new-post-form" class="card p-6 space-y-4">
+                <h3 class="text-xl font-bold text-gray-100 mb-2">Create New Blog Post</h3>
+                <div>
+                    <label class="block text-gray-300 mb-1">Title</label>
+                    <input type="text" name="title" class="w-full p-3 rounded bg-slate-800 text-gray-100" required />
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-1">Summary (Markdown supported)</label>
+                    <textarea name="summary" rows="2" class="w-full p-3 rounded bg-slate-800 text-gray-100" required></textarea>
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-1">Tags (comma separated)</label>
+                    <input type="text" name="tags" class="w-full p-3 rounded bg-slate-800 text-gray-100" placeholder="e.g. AI, Data Science" />
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-1">Content (Markdown supported)</label>
+                    <textarea name="markdown" rows="8" class="w-full p-3 rounded bg-slate-800 text-gray-100" required></textarea>
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button type="button" id="cancel-post-btn" class="bg-slate-700 text-gray-300 px-6 py-2 rounded hover:bg-slate-600">Cancel</button>
+                    <button type="submit" class="bg-teal-400 text-slate-900 px-6 py-2 rounded font-semibold hover:bg-teal-300">Publish</button>
+                </div>
+            </form>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -103,8 +111,63 @@
     </footer>
 
     <script>
+    // --- Blog Post Creation ---
+    const newPostBtn = document.getElementById('new-post-btn');
+    const newPostFormContainer = document.getElementById('new-post-form-container');
+    const newPostForm = document.getElementById('new-post-form');
+    const cancelPostBtn = document.getElementById('cancel-post-btn');
+    let localPosts = JSON.parse(localStorage.getItem('localPosts') || '[]');
+
+    newPostBtn.onclick = () => {
+        newPostFormContainer.style.display = 'block';
+        window.scrollTo({top: newPostFormContainer.offsetTop-80, behavior: 'smooth'});
+    };
+    cancelPostBtn.onclick = () => {
+        newPostFormContainer.style.display = 'none';
+        newPostForm.reset();
+    };
+    newPostForm.onsubmit = function(e) {
+        e.preventDefault();
+        const formData = new FormData(newPostForm);
+        const post = {
+            id: 'local-' + Date.now(),
+            title: formData.get('title'),
+            summary: formData.get('summary'),
+            tags: formData.get('tags').split(',').map(t => t.trim()).filter(Boolean),
+            markdown: formData.get('markdown'),
+            date: new Date().toISOString(),
+            author: 'You (local)',
+        };
+        localPosts.unshift(post);
+        localStorage.setItem('localPosts', JSON.stringify(localPosts));
+        posts.unshift(post);
+        renderBlogList();
+        renderRecent();
+        newPostFormContainer.style.display = 'none';
+        newPostForm.reset();
+    };
+
+    // --- Merge local posts with fetched posts ---
+    function mergePosts(fetched) {
+        return [...localPosts, ...fetched];
+    }
+
+    // --- Blog Dynamic Loader (updated) ---
+    fetch('posts.json')
+        .then(res => res.json())
+        .then(data => {
+            posts = mergePosts(data);
+            renderBlogList();
+            renderRecent();
+        });
     // --- Blog Dynamic Loader ---
     document.addEventListener('DOMContentLoaded', function() {
+        // --- Blog Post Routing by ID ---
+        function getQueryParam(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+        const postId = getQueryParam('id');
         const postsListContainer = document.getElementById('blog-list');
         const postViewContainer = document.getElementById('blog-post-view');
         const sidebarRecent = document.getElementById('sidebar-recent');
@@ -150,7 +213,7 @@
             postViewContainer.style.display = 'block';
             postViewContainer.innerHTML = `
                 <div class="card p-8 mb-8">
-                    <button onclick="window.showBlogList()" class="mb-4 text-teal-300 underline">← Back to Blog</button>
+                    <button onclick="window.showBlogList(true)" class="mb-4 text-teal-300 underline">← Back to Blog</button>
                     <h2 class="text-3xl font-bold text-gray-100 mb-2">${post.title}</h2>
                     <div class="flex items-center text-sm text-gray-400 mb-4">
                         <span>By ${post.author}</span>
@@ -165,12 +228,21 @@
                     </div>
                 </div>
             `;
+            history.pushState({postId}, '', `?id=${postId}`);
             window.scrollTo({top: postViewContainer.offsetTop-80, behavior: 'smooth'});
         };
-        window.showBlogList = function() {
+        window.showBlogList = function(fromBackBtn) {
             postViewContainer.style.display = 'none';
             postsListContainer.style.display = 'grid';
+            if (fromBackBtn) history.pushState({}, '', 'blog.html');
             window.scrollTo({top: postsListContainer.offsetTop-80, behavior: 'smooth'});
+        };
+        window.onpopstate = function(event) {
+            if (getQueryParam('id')) {
+                window.showBlogPost(getQueryParam('id'));
+            } else {
+                window.showBlogList();
+            }
         };
 
         // Render recent posts in sidebar
@@ -180,13 +252,31 @@
             ).join('');
         }
 
+        // --- Mobile Menu Toggle ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+        }
+
         // Load posts
         fetch('posts.json')
             .then(res => res.json())
             .then(data => {
-                posts = data;
-                renderBlogList();
-                renderRecent();
+                posts = mergePosts(data);
+                if (postId) {
+                    renderBlogList();
+                    renderRecent();
+                    setTimeout(() => window.showBlogPost(postId), 0);
+                } else {
+                    renderBlogList();
+                    renderRecent();
+                }
             });
     });
     </script>
