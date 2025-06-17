@@ -70,7 +70,8 @@
                 <a href="#skills" class="hover:text-teal-300 transition-colors">Skills</a>
                 <a href="#honors" class="hover:text-teal-300 transition-colors">Honors</a>
                 <a href="#education" class="hover:text-teal-300 transition-colors">Education</a>
-                <a href="#contact" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-4 py-2 rounded-md hover:bg-teal-400/20 transition-colors">Contact</a>
+                <a href="#contact" class="hover:text-teal-300 transition-colors">Contact</a>
+                <a href="#blog" class="hover:text-teal-300 transition-colors">Blog</a>
             </div>
             <div class="md:hidden">
                 <button id="menu-btn" class="text-teal-300 focus:outline-none">
@@ -86,25 +87,39 @@
             <a href="#honors" class="block py-2 px-4 text-sm hover:bg-slate-700">Honors</a>
             <a href="#education" class="block py-2 px-4 text-sm hover:bg-slate-700">Education</a>
             <a href="#contact" class="block py-2 px-4 text-sm hover:bg-slate-700">Contact</a>
+            <a href="#blog" class="block py-2 px-4 text-sm hover:bg-slate-700">Blog</a>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
 
-        <!-- Hero Section -->
+        <!-- Profile Photo & Hero Section Enhancement -->
         <section id="home" class="text-center flex flex-col items-center justify-center min-h-[70vh]">
+            <img src="brain.png" alt="Profile Photo" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-teal-400 object-cover"/>
             <p class="text-lg accent-text mb-4">Hi, my name is</p>
             <h1 class="text-4xl md:text-7xl font-extrabold text-gray-100 mb-4 leading-tight">Tamoghna Das.</h1>
             <h2 class="text-4xl md:text-6xl font-extrabold text-gray-400 mb-6">I build things for data and AI.</h2>
             <p class="max-w-3xl mx-auto text-lg text-gray-400 mb-8">
                 I'm a data scientist and researcher specializing in the intersection of biology and AI. Currently focused on developing innovative applications that simplify complex data.
             </p>
-            <div class="space-x-4">
+            <div class="space-x-4 mb-4">
                 <a href="mailto:tamoghnadas.12@gmail.com" class="bg-teal-400 text-slate-900 px-8 py-3 rounded-md font-semibold text-lg hover:bg-teal-300 transition-transform duration-300 inline-block transform hover:scale-105">
                     <i class="fas fa-envelope mr-2"></i> Get In Touch
                 </a>
+                <a href="#" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-8 py-3 rounded-md font-semibold text-lg hover:bg-teal-400/20 transition-colors inline-block" download><i class="fas fa-file-download mr-2"></i>Download CV</a>
             </div>
+            <div class="flex justify-center gap-4 mt-4">
+                <img src="/path/to/university_logo.png" alt="University Logo" class="w-10 h-10 rounded bg-white object-contain"/>
+                <img src="/path/to/company_logo.png" alt="Company Logo" class="w-10 h-10 rounded bg-white object-contain"/>
+                <!-- Add more logos as needed -->
+            </div>
+        </section>
+
+        <!-- Profile Photo Section (Hero) -->
+        <section class="flex flex-col items-center mb-8">
+            <img src="brain.png" alt="Profile Photo" class="w-36 h-36 rounded-full border-4 border-teal-400 shadow-lg object-cover mb-4 bg-[#112240]" />
+            <a href="#" class="text-sm text-teal-300 underline hover:text-teal-200">Update Photo</a>
         </section>
 
         <!-- About Section -->
@@ -205,23 +220,66 @@
 
         <!-- Skills Section -->
         <section id="skills" class="py-20 reveal">
-             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <span class="tag">Artificial Intelligence (AI)</span>
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">SQL</span>
-                    <span class="tag">Statistical Data Analysis</span>
-                    <span class="tag">Data Visualization</span>
-                    <span class="tag">Power BI</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">NumPy</span>
-                    <span class="tag">Scikit-learn</span>
-                    <span class="tag">Nextflow</span>
-                    <span class="tag">Galaxy</span>
-                    <span class="tag">Linux</span>
-                    <span class="tag">Azure</span>
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="max-w-4xl mx-auto text-center">
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-brain text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Artificial Intelligence (AI)</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-robot text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Machine Learning</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fab fa-python text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Python</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-database text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">SQL</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-chart-bar text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Statistical Data Analysis</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-chart-pie text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Data Visualization</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-chart-line text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Power BI</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-table text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Pandas</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-th text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">NumPy</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-project-diagram text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Scikit-learn</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-code-branch text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Nextflow</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-cloud text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Galaxy</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-terminal text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Linux</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fab fa-microsoft text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Azure</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -260,28 +318,258 @@
         <!-- Education Section -->
         <section id="education" class="py-20 reveal">
             <h2 class="section-title">Education</h2>
-            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <div class="max-w-4xl mx-auto relative">
+                <!-- Timeline vertical line -->
+                <div class="hidden md:block absolute left-4 top-0 h-full w-1 bg-gradient-to-b from-teal-400/60 to-transparent z-0"></div>
+                <div class="grid md:grid-cols-2 gap-8 relative z-10">
+                    <div class="card p-6 group relative">
+                        <div class="absolute -left-8 top-6 hidden md:block">
+                            <span class="inline-block w-6 h-6 rounded-full bg-teal-400 border-4 border-[#112240]"></span>
+                        </div>
+                        <h3 class="text-xl font-bold">Doctor of Philosophy - PhD</h3>
+                        <p class="font-semibold accent-text">Loughborough University <span class="ml-2 px-2 py-1 text-xs bg-teal-400/20 text-teal-300 rounded">UKRI Scholar</span></p>
+                        <p class="text-gray-400">Biochemical Engineering (UKRI Scholarship)</p>
+                        <p class="text-sm text-gray-500 mb-2">Expected Sep 2024</p>
+                        <p class="text-sm text-gray-400 mb-2"><span class="font-semibold text-teal-300">Thesis:</span> AI-driven metabolic engineering for biomanufacturing</p>
+                        <ul class="text-sm text-gray-400 list-disc list-inside mb-2">
+                            <li>Focus: Synthetic biology, AI/ML, omics data analysis</li>
+                            <li>Key Skills: Python, Nextflow, ML, Data Viz, Scientific Writing</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6 group relative">
+                        <div class="absolute -left-8 top-6 hidden md:block">
+                            <span class="inline-block w-6 h-6 rounded-full bg-teal-400 border-4 border-[#112240]"></span>
+                        </div>
+                        <h3 class="text-xl font-bold">Master of Science - MSc</h3>
+                        <p class="font-semibold accent-text">University of East Anglia</p>
+                        <p class="text-gray-400">Data Science</p>
+                        <p class="text-sm text-gray-400 mb-2"><span class="font-semibold text-teal-300">Project:</span> Predictive analytics for genomics</p>
+                        <ul class="text-sm text-gray-400 list-disc list-inside mb-2">
+                            <li>Focus: ML, Big Data, Python, R, Data Engineering</li>
+                            <li>Key Skills: Pandas, Scikit-learn, SQL, Power BI</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6 group relative">
+                        <div class="absolute -left-8 top-6 hidden md:block">
+                            <span class="inline-block w-6 h-6 rounded-full bg-teal-400 border-4 border-[#112240]"></span>
+                        </div>
+                        <h3 class="text-xl font-bold">MSc in Engineering</h3>
+                        <p class="font-semibold accent-text">University College London (UCL)</p>
+                        <p class="text-gray-400">Biochemical Engineering</p>
+                        <p class="text-sm text-gray-400 mb-2"><span class="font-semibold text-teal-300">Project:</span> Metabolic pathway optimization</p>
+                        <ul class="text-sm text-gray-400 list-disc list-inside mb-2">
+                            <li>Focus: Bioprocess, Metabolic Engineering, Data Analysis</li>
+                            <li>Key Skills: MATLAB, Python, Biostatistics</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6 group relative">
+                        <div class="absolute -left-8 top-6 hidden md:block">
+                            <span class="inline-block w-6 h-6 rounded-full bg-teal-400 border-4 border-[#112240]"></span>
+                        </div>
+                        <h3 class="text-xl font-bold">B.Tech (Biotechnology)</h3>
+                        <p class="font-semibold accent-text">Vellore Institute of Technology</p>
+                        <p class="text-gray-400">Biotechnology</p>
+                        <p class="text-sm text-gray-400 mb-2"><span class="font-semibold text-teal-300">Project:</span> Enzyme engineering for biofuels</p>
+                        <ul class="text-sm text-gray-400 list-disc list-inside mb-2">
+                            <li>Focus: Molecular Biology, Enzyme Tech, Research</li>
+                            <li>Key Skills: Wet Lab, Data Analysis, Teamwork</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloadable CV Button (Hero/About) -->
+        <div class="flex justify-center mt-4 mb-8">
+            <a href="#" download class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-2 rounded-md hover:bg-teal-400/20 transition-colors text-lg flex items-center">
+                <i class="fas fa-file-download mr-2"></i> Download CV
+            </a>
+        </div>
+
+        <!-- Project Portfolio Section -->
+        <section id="portfolio" class="py-20 reveal">
+            <h2 class="section-title">Project Portfolio</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="card p-4 flex flex-col items-center">
+                    <img src="project1.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
+                    <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 1</h3>
+                    <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
+                    <a href="#" class="text-teal-300 underline text-sm">View Details</a>
+                </div>
+                <div class="card p-4 flex flex-col items-center">
+                    <img src="project2.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
+                    <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 2</h3>
+                    <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
+                    <a href="#" class="text-teal-300 underline text-sm">View Details</a>
+                </div>
+                <div class="card p-4 flex flex-col items-center">
+                    <img src="project3.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
+                    <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 3</h3>
+                    <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
+                    <a href="#" class="text-teal-300 underline text-sm">View Details</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animated Skill Bars Section -->
+        <section class="py-20 reveal">
+            <h2 class="section-title">Skill Proficiency</h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div>
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-100 font-semibold">Python</span>
+                        <span class="text-teal-300">95%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-4">
+                        <div class="bg-teal-400 h-4 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-100 font-semibold">Machine Learning</span>
+                        <span class="text-teal-300">90%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-4">
+                        <div class="bg-teal-400 h-4 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-100 font-semibold">Data Visualization</span>
+                        <span class="text-teal-300">85%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-4">
+                        <div class="bg-teal-400 h-4 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 reveal">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-8">
                 <div class="card p-6">
-                    <h3 class="text-xl font-bold">Doctor of Philosophy - PhD</h3>
-                    <p class="font-semibold accent-text">Loughborough University</p>
-                    <p class="text-gray-400">Biochemical Engineering (UKRI Scholarship)</p>
-                    <p class="text-sm text-gray-500">Expected Sep 2024</p>
-                </div>
-                 <div class="card p-6">
-                    <h3 class="text-xl font-bold">Master of Science - MSc</h3>
-                    <p class="font-semibold accent-text">University of East Anglia</p>
-                    <p class="text-gray-400">Data Science</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold">MSc in Engineering</h3>
-                    <p class="font-semibold accent-text">University College London (UCL)</p>
-                    <p class="text-gray-400">Biochemical Engineering</p>
+                    <p class="text-gray-300 italic mb-4">“Tamoghna is a brilliant data scientist who brings creativity and rigor to every project.”</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <span class="font-bold text-gray-100">John Doe</span><br>
+                            <span class="text-sm text-gray-400">Colleague, AI Update</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="card p-6">
-                    <h3 class="text-xl font-bold">B.Tech (Biotechnology)</h3>
-                    <p class="font-semibold accent-text">Vellore Institute of Technology</p>
-                    <p class="text-gray-400">Biotechnology</p>
+                    <p class="text-gray-300 italic mb-4">“A true professional with a passion for teaching and research.”</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Testimonial" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <span class="font-bold text-gray-100">Jane Smith</span><br>
+                            <span class="text-sm text-gray-400">Mentor, UEA</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20 reveal">
+            <h2 class="section-title">Certifications</h2>
+            <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="card p-6 flex items-center">
+                    <i class="fas fa-certificate text-3xl accent-text mr-4"></i>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-100">Certified Data Scientist</h3>
+                        <p class="text-gray-400 text-sm">Data Science Council of America (DASCA)</p>
+                    </div>
+                </div>
+                <div class="card p-6 flex items-center">
+                    <i class="fas fa-certificate text-3xl accent-text mr-4"></i>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-100">Azure AI Engineer Associate</h3>
+                        <p class="text-gray-400 text-sm">Microsoft</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-20 reveal">
+            <h2 class="section-title">Publications</h2>
+            <div class="max-w-3xl mx-auto">
+                <ul class="list-disc list-inside text-gray-400 space-y-3">
+                    <li><a href="#" class="text-teal-300 underline">AI-driven metabolic engineering for biomanufacturing</a> (2024, Journal of Synthetic Biology)</li>
+                    <li><a href="#" class="text-teal-300 underline">Predictive analytics for genomics</a> (2023, Data Science Journal)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-20 reveal">
+            <h2 class="section-title">Research Journey Blog</h2>
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="card p-6 flex flex-col">
+                    <h3 class="font-bold text-xl text-gray-100 mb-2">How I Started in Data Science</h3>
+                    <p class="text-gray-400 text-sm mb-4">A brief story about my entry into the world of data science and AI research.</p>
+                    <a href="#" class="text-teal-300 underline text-sm mt-auto">Read More</a>
+                </div>
+                <div class="card p-6 flex flex-col">
+                    <h3 class="font-bold text-xl text-gray-100 mb-2">Lessons from My PhD</h3>
+                    <p class="text-gray-400 text-sm mb-4">Reflections and tips from my ongoing doctoral journey in biochemical engineering.</p>
+                    <a href="#" class="text-teal-300 underline text-sm mt-auto">Read More</a>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-2 rounded-md hover:bg-teal-400/20 transition-colors text-lg">View All Blog Posts</a>
+            </div>
+        </section>
+
+        <!-- Fun Facts Section -->
+        <section id="fun-facts" class="py-20 reveal">
+            <h2 class="section-title">Fun Facts</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-4 gap-8 text-center">
+                <div class="card p-6 flex flex-col items-center">
+                    <i class="fas fa-globe-asia text-3xl accent-text mb-2"></i>
+                    <span class="font-bold text-lg text-gray-100">10+</span>
+                    <span class="text-gray-400 text-sm">Countries Visited</span>
+                </div>
+                <div class="card p-6 flex flex-col items-center">
+                    <i class="fas fa-camera text-3xl accent-text mb-2"></i>
+                    <span class="font-bold text-lg text-gray-100">5000+</span>
+                    <span class="text-gray-400 text-sm">Photos Taken</span>
+                </div>
+                <div class="card p-6 flex flex-col items-center">
+                    <i class="fas fa-microphone text-3xl accent-text mb-2"></i>
+                    <span class="font-bold text-lg text-gray-100">20+</span>
+                    <span class="text-gray-400 text-sm">Talks Given</span>
+                </div>
+                <div class="card p-6 flex flex-col items-center">
+                    <i class="fas fa-mug-hot text-3xl accent-text mb-2"></i>
+                    <span class="font-bold text-lg text-gray-100">∞</span>
+                    <span class="text-gray-400 text-sm">Cups of Coffee</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact-form" class="py-20 reveal">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="max-w-xl mx-auto bg-[#112240] p-8 rounded-xl shadow-lg">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-300 mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 rounded bg-slate-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400" required />
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 mb-1">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 rounded bg-slate-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400" required />
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full p-3 rounded bg-slate-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-teal-400 text-slate-900 px-6 py-3 rounded-md font-semibold text-lg hover:bg-teal-300 transition-transform duration-300">Send Message</button>
+                </form>
             </div>
         </section>
 
