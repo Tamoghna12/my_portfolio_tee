@@ -3,75 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamoghna Das - Data Scientist | AI Educator</title>
+    <title>Blog | Tamoghna Das</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a192f; /* Dark Navy Blue */
-            color: #ccd6f6; /* Light Slate */
-        }
-        .section-title {
-            @apply text-3xl font-bold text-gray-100 mb-12 text-center;
-        }
-        .card {
-            background-color: #112240; /* Lighter Navy */
-            @apply rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
-        }
-        .tag {
-            @apply inline-block bg-teal-400/10 text-teal-300 text-xs font-medium mr-2 px-3 py-1 rounded-full;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -31px;
-            top: 4px;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background-color: #64ffda; /* Accent Teal */
-            border: 4px solid #0a192f;
-            z-index: 10;
-        }
-        .accent-text {
-            color: #64ffda;
-        }
-        .header-glass {
-             background-color: rgba(10, 25, 47, 0.85);
-             backdrop-filter: blur(10px);
-        }
-        
-        /* Reveal on scroll animation */
-        .reveal {
-            position: relative;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: 1s all ease;
-        }
-
-        .reveal.active {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="text-gray-300">
-
     <!-- Header -->
     <header class="header-glass shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold accent-text">TD</a>
+            <a href="index.html" class="text-2xl font-bold accent-text">TD</a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="#about" class="hover:text-teal-300 transition-colors">About</a>
-                <a href="#experience" class="hover:text-teal-300 transition-colors">Experience</a>
-                <a href="#skills" class="hover:text-teal-300 transition-colors">Skills</a>
-                <a href="#honors" class="hover:text-teal-300 transition-colors">Honors</a>
-                <a href="#education" class="hover:text-teal-300 transition-colors">Education</a>
-                <a href="#contact" class="hover:text-teal-300 transition-colors">Contact</a>
-                <a href="#blog" class="hover:text-teal-300 transition-colors">Blog</a>
+                <a href="index.html#about" class="hover:text-teal-300 transition-colors">About</a>
+                <a href="index.html#experience" class="hover:text-teal-300 transition-colors">Experience</a>
+                <a href="index.html#skills" class="hover:text-teal-300 transition-colors">Skills</a>
+                <a href="index.html#honors" class="hover:text-teal-300 transition-colors">Honors</a>
+                <a href="index.html#education" class="hover:text-teal-300 transition-colors">Education</a>
+                <a href="blog.html" class="text-teal-300 font-semibold">Blog</a>
+                <a href="index.html#contact" class="hover:text-teal-300 transition-colors">Contact</a>
             </div>
             <div class="md:hidden">
                 <button id="menu-btn" class="text-teal-300 focus:outline-none">
@@ -79,504 +30,74 @@
                 </button>
             </div>
         </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-slate-700">About</a>
-            <a href="#experience" class="block py-2 px-4 text-sm hover:bg-slate-700">Experience</a>
-            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-slate-700">Skills</a>
-            <a href="#honors" class="block py-2 px-4 text-sm hover:bg-slate-700">Honors</a>
-            <a href="#education" class="block py-2 px-4 text-sm hover:bg-slate-700">Education</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-slate-700">Contact</a>
-            <a href="#blog" class="block py-2 px-4 text-sm hover:bg-slate-700">Blog</a>
-        </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
-
-        <!-- Profile Photo & Hero Section Enhancement -->
-        <section id="home" class="text-center flex flex-col items-center justify-center min-h-[70vh]">
-            <img src="brain.png" alt="Profile Photo" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-teal-400 object-cover"/>
-            <p class="text-lg accent-text mb-4">Hi, my name is</p>
-            <h1 class="text-4xl md:text-7xl font-extrabold text-gray-100 mb-4 leading-tight">Tamoghna Das.</h1>
-            <h2 class="text-4xl md:text-6xl font-extrabold text-gray-400 mb-6">I build things for data and AI.</h2>
-            <p class="max-w-3xl mx-auto text-lg text-gray-400 mb-8">
-                I'm a data scientist and researcher specializing in the intersection of biology and AI. Currently focused on developing innovative applications that simplify complex data.
-            </p>
-            <div class="space-x-4 mb-4">
-                <a href="mailto:tamoghnadas.12@gmail.com" class="bg-teal-400 text-slate-900 px-8 py-3 rounded-md font-semibold text-lg hover:bg-teal-300 transition-transform duration-300 inline-block transform hover:scale-105">
-                    <i class="fas fa-envelope mr-2"></i> Get In Touch
-                </a>
-                <a href="#" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-8 py-3 rounded-md font-semibold text-lg hover:bg-teal-400/20 transition-colors inline-block" download><i class="fas fa-file-download mr-2"></i>Download CV</a>
-            </div>
-            <div class="flex justify-center gap-4 mt-4">
-                <img src="/path/to/university_logo.png" alt="University Logo" class="w-10 h-10 rounded bg-white object-contain"/>
-                <img src="/path/to/company_logo.png" alt="Company Logo" class="w-10 h-10 rounded bg-white object-contain"/>
-                <!-- Add more logos as needed -->
-            </div>
-        </section>
-
-        <!-- Profile Photo Section (Hero) -->
-        <section class="flex flex-col items-center mb-8">
-            <img src="brain.png" alt="Profile Photo" class="w-36 h-36 rounded-full border-4 border-teal-400 shadow-lg object-cover mb-4 bg-[#112240]" />
-            <a href="#" class="text-sm text-teal-300 underline hover:text-teal-200">Update Photo</a>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-20 reveal">
-             <h2 class="section-title">About Me</h2>
-            <div class="max-w-4xl mx-auto bg-[#112240] p-8 rounded-xl shadow-lg">
-                <p class="text-lg mb-4">Hi there! I'm Tamoghna Das, a passionate data scientist from India, currently based in the UK. I thrive at the intersection of biological sciences and data, leveraging my background to bring a unique perspective to data analysis, modeling, and optimization.</p>
-                <p class="text-lg mb-4">With a PhD in Chemical Engineering (Loughborough), an M.Sc. in Biochemical Engineering (UCL), and an M.Sc. in Data Science (UEA), my multidisciplinary foundation fuels my aspiration to develop web applications for analyzing and visualizing complex biological and non-biological data.</p>
-                <p class="text-lg">Outside the professional sphere, I love traveling, photography, and videography. I'm excited to connect with like-minded professionals and explore new opportunities in the data science domain.</p>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="py-20 reveal">
-            <h2 class="section-title">Where I've Worked</h2>
-            <div class="max-w-4xl mx-auto relative pl-8 border-l-2 border-slate-700">
-
-                <div class="timeline-item-wrapper">
-                    <!-- Artificial Intelligence Update -->
-                    <div class="mb-12 relative timeline-item">
-                        <div class="card p-6">
-                            <h3 class="text-xl font-bold text-gray-100">Co-Founder</h3>
-                            <p class="text-md accent-text font-semibold mb-1">Artificial Intelligence Update</p>
-                            <p class="text-sm text-gray-400 mb-3">Nov 2023 - Present</p>
-                            <ul class="list-disc list-inside text-gray-400 space-y-2">
-                                <li>Designing and building advanced AI models and applications.</li>
-                                <li>Developing no-code/low-code software solutions.</li>
-                                <li>Using LLMs for research, development, and content generation.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Just IT -->
-                    <div class="mb-12 relative timeline-item">
-                        <div class="card p-6">
-                            <h3 class="text-xl font-bold text-gray-100">Data Analyst Technical Trainer</h3>
-                            <p class="text-md accent-text font-semibold mb-1">Just IT</p>
-                            <p class="text-sm text-gray-400 mb-3">Apr 2024 - Sep 2024</p>
-                            <ul class="list-disc list-inside text-gray-400 space-y-2">
-                                <li>Empowered 20+ learners with data analytics skills (Excel, SQL, Power BI, Python, Azure).</li>
-                                <li>Achieved over 94% learner satisfaction score.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Maxin Group Limited -->
-                    <div class="mb-12 relative timeline-item">
-                        <div class="card p-6">
-                            <h3 class="text-xl font-bold text-gray-100">Chief AI Officer (CAIO)</h3>
-                            <p class="text-md accent-text font-semibold mb-1">Maxin Group Limited</p>
-                            <p class="text-sm text-gray-400 mb-3">Jul 2023 - Oct 2023</p>
-                            <ul class="list-disc list-inside text-gray-400 space-y-2">
-                               <li>Defined the organisation's AI strategy and roadmap.</li>
-                               <li>Oversaw development and implementation of AI projects.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Stoodnt, Inc. -->
-                    <div class="mb-12 relative timeline-item extra-experience hidden">
-                        <div class="card p-6">
-                            <h3 class="text-xl font-bold text-gray-100">Strategic Partner</h3>
-                            <p class="text-md accent-text font-semibold mb-1">Stoodnt, Inc.</p>
-                            <p class="text-sm text-gray-400 mb-3">Apr 2021 - Sep 2023</p>
-                            <ul class="list-disc list-inside text-gray-400 space-y-2">
-                               <li>Guided high school and college students in analytical and soft skills.</li>
-                               <li>Impacted 100+ students, refining teaching methods based on feedback.</li>
-                            </ul>
-                        </div>
-                    </div>
-                     <!-- Learning Curve Technologies -->
-                    <div class="mb-12 relative timeline-item extra-experience hidden">
-                        <div class="card p-6">
-                            <h3 class="text-xl font-bold text-gray-100">Prompt Engineer & Python SME</h3>
-                            <p class="text-md accent-text font-semibold mb-1">Learning Curve Technologies</p>
-                            <p class="text-sm text-gray-400 mb-3">Apr 2023 - Jul 2023</p>
-                            <ul class="list-disc list-inside text-gray-400 space-y-2">
-                               <li>Developed and maintained Python-based applications and technical documentation.</li>
-                               <li>Served as a subject matter expert for Python-related issues.</li>
-                            </ul>
-                        </div>
-                    </div>
-                     <!-- Earlham Institute -->
-                    <div class="mb-12 relative timeline-item extra-experience hidden">
-                        <div class="card p-6">
-                            <h3 class="text-xl font-bold text-gray-100">Researcher</h3>
-                            <p class="text-md accent-text font-semibold mb-1">Earlham Institute</p>
-                            <p class="text-sm text-gray-400 mb-3">Apr 2022 - Oct 2022</p>
-                            <ul class="list-disc list-inside text-gray-400 space-y-2">
-                               <li>Analyzed Whole Genome Sequencing (WGS) omics data.</li>
-                               <li>Developed an ML model to enhance analysis process using Python and R.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                 <div class="text-center">
-                    <button id="show-more-btn" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-3 rounded-md hover:bg-teal-400/20 transition-colors">Show More</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 reveal">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="max-w-4xl mx-auto text-center">
-                
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-brain text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Artificial Intelligence (AI)</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-robot text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Machine Learning</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fab fa-python text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Python</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-database text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">SQL</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-chart-bar text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Statistical Data Analysis</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-chart-pie text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Data Visualization</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-chart-line text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Power BI</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-table text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Pandas</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-th text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">NumPy</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-project-diagram text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Scikit-learn</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-code-branch text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Nextflow</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-cloud text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Galaxy</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-terminal text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Linux</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fab fa-microsoft text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Azure</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Honors & Awards Section -->
-        <section id="honors" class="py-20 reveal">
-            <h2 class="section-title">Honors & Awards</h2>
-            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="card p-6 flex items-center space-x-4">
-                    <i class="fas fa-award text-3xl accent-text"></i>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-100">The Ginkgo Bioworks Challenge</h3>
-                    </div>
-                </div>
-                 <div class="card p-6 flex items-center space-x-4">
-                    <i class="fas fa-award text-3xl accent-text"></i>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-100">2018 ICID Hackathon, Buenos Aires</h3>
-                    </div>
-                </div>
-                 <div class="card p-6 flex items-center space-x-4">
-                    <i class="fas fa-award text-3xl accent-text"></i>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-100">The International PhD Program in Protein Biotechnology (BioTop)</h3>
-                    </div>
-                </div>
-                 <div class="card p-6 flex items-center space-x-4">
-                    <i class="fas fa-award text-3xl accent-text"></i>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-100">Chem-a-Thon (Chemical-Hack), India</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="py-20 reveal">
-            <h2 class="section-title">Education</h2>
-            <div class="max-w-4xl mx-auto relative">
-                <!-- Timeline vertical line -->
-                <div class="hidden md:block absolute left-4 top-0 h-full w-1 bg-gradient-to-b from-teal-400/60 to-transparent z-0"></div>
-                <div class="grid md:grid-cols-2 gap-8 relative z-10">
-                    <div class="card p-6 group relative">
-                        <div class="absolute -left-8 top-6 hidden md:block">
-                            <span class="inline-block w-6 h-6 rounded-full bg-teal-400 border-4 border-[#112240]"></span>
-                        </div>
-                        <h3 class="text-xl font-bold">Doctor of Philosophy - PhD</h3>
-                        <p class="font-semibold accent-text">Loughborough University <span class="ml-2 px-2 py-1 text-xs bg-teal-400/20 text-teal-300 rounded">UKRI Scholar</span></p>
-                        <p class="text-gray-400">Biochemical Engineering (UKRI Scholarship)</p>
-                        <p class="text-sm text-gray-500 mb-2">Expected Sep 2024</p>
-                        <p class="text-sm text-gray-400 mb-2"><span class="font-semibold text-teal-300">Thesis:</span> AI-driven metabolic engineering for biomanufacturing</p>
-                        <ul class="text-sm text-gray-400 list-disc list-inside mb-2">
-                            <li>Focus: Synthetic biology, AI/ML, omics data analysis</li>
-                            <li>Key Skills: Python, Nextflow, ML, Data Viz, Scientific Writing</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6 group relative">
-                        <div class="absolute -left-8 top-6 hidden md:block">
-                            <span class="inline-block w-6 h-6 rounded-full bg-teal-400 border-4 border-[#112240]"></span>
-                        </div>
-                        <h3 class="text-xl font-bold">Master of Science - MSc</h3>
-                        <p class="font-semibold accent-text">University of East Anglia</p>
-                        <p class="text-gray-400">Data Science</p>
-                        <p class="text-sm text-gray-400 mb-2"><span class="font-semibold text-teal-300">Project:</span> Predictive analytics for genomics</p>
-                        <ul class="text-sm text-gray-400 list-disc list-inside mb-2">
-                            <li>Focus: ML, Big Data, Python, R, Data Engineering</li>
-                            <li>Key Skills: Pandas, Scikit-learn, SQL, Power BI</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6 group relative">
-                        <div class="absolute -left-8 top-6 hidden md:block">
-                            <span class="inline-block w-6 h-6 rounded-full bg-teal-400 border-4 border-[#112240]"></span>
-                        </div>
-                        <h3 class="text-xl font-bold">MSc in Engineering</h3>
-                        <p class="font-semibold accent-text">University College London (UCL)</p>
-                        <p class="text-gray-400">Biochemical Engineering</p>
-                        <p class="text-sm text-gray-400 mb-2"><span class="font-semibold text-teal-300">Project:</span> Metabolic pathway optimization</p>
-                        <ul class="text-sm text-gray-400 list-disc list-inside mb-2">
-                            <li>Focus: Bioprocess, Metabolic Engineering, Data Analysis</li>
-                            <li>Key Skills: MATLAB, Python, Biostatistics</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6 group relative">
-                        <div class="absolute -left-8 top-6 hidden md:block">
-                            <span class="inline-block w-6 h-6 rounded-full bg-teal-400 border-4 border-[#112240]"></span>
-                        </div>
-                        <h3 class="text-xl font-bold">B.Tech (Biotechnology)</h3>
-                        <p class="font-semibold accent-text">Vellore Institute of Technology</p>
-                        <p class="text-gray-400">Biotechnology</p>
-                        <p class="text-sm text-gray-400 mb-2"><span class="font-semibold text-teal-300">Project:</span> Enzyme engineering for biofuels</p>
-                        <ul class="text-sm text-gray-400 list-disc list-inside mb-2">
-                            <li>Focus: Molecular Biology, Enzyme Tech, Research</li>
-                            <li>Key Skills: Wet Lab, Data Analysis, Teamwork</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Downloadable CV Button (Hero/About) -->
-        <div class="flex justify-center mt-4 mb-8">
-            <a href="#" download class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-2 rounded-md hover:bg-teal-400/20 transition-colors text-lg flex items-center">
-                <i class="fas fa-file-download mr-2"></i> Download CV
-            </a>
-        </div>
-
-        <!-- Project Portfolio Section -->
-        <section id="portfolio" class="py-20 reveal">
-            <h2 class="section-title">Project Portfolio</h2>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="card p-4 flex flex-col items-center">
-                    <img src="project1.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
-                    <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 1</h3>
-                    <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
-                    <a href="#" class="text-teal-300 underline text-sm">View Details</a>
-                </div>
-                <div class="card p-4 flex flex-col items-center">
-                    <img src="project2.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
-                    <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 2</h3>
-                    <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
-                    <a href="#" class="text-teal-300 underline text-sm">View Details</a>
-                </div>
-                <div class="card p-4 flex flex-col items-center">
-                    <img src="project3.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
-                    <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 3</h3>
-                    <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
-                    <a href="#" class="text-teal-300 underline text-sm">View Details</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Animated Skill Bars Section -->
-        <section class="py-20 reveal">
-            <h2 class="section-title">Skill Proficiency</h2>
-            <div class="max-w-3xl mx-auto space-y-6">
-                <div>
-                    <div class="flex justify-between mb-1">
-                        <span class="text-gray-100 font-semibold">Python</span>
-                        <span class="text-teal-300">95%</span>
-                    </div>
-                    <div class="w-full bg-slate-800 rounded-full h-4">
-                        <div class="bg-teal-400 h-4 rounded-full" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex justify-between mb-1">
-                        <span class="text-gray-100 font-semibold">Machine Learning</span>
-                        <span class="text-teal-300">90%</span>
-                    </div>
-                    <div class="w-full bg-slate-800 rounded-full h-4">
-                        <div class="bg-teal-400 h-4 rounded-full" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex justify-between mb-1">
-                        <span class="text-gray-100 font-semibold">Data Visualization</span>
-                        <span class="text-teal-300">85%</span>
-                    </div>
-                    <div class="w-full bg-slate-800 rounded-full h-4">
-                        <div class="bg-teal-400 h-4 rounded-full" style="width: 85%"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20 reveal">
-            <h2 class="section-title">Testimonials</h2>
-            <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-8">
-                <div class="card p-6">
-                    <p class="text-gray-300 italic mb-4">“Tamoghna is a brilliant data scientist who brings creativity and rigor to every project.”</p>
-                    <div class="flex items-center">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial" class="w-10 h-10 rounded-full mr-3" />
-                        <div>
-                            <span class="font-bold text-gray-100">John Doe</span><br>
-                            <span class="text-sm text-gray-400">Colleague, AI Update</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card p-6">
-                    <p class="text-gray-300 italic mb-4">“A true professional with a passion for teaching and research.”</p>
-                    <div class="flex items-center">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Testimonial" class="w-10 h-10 rounded-full mr-3" />
-                        <div>
-                            <span class="font-bold text-gray-100">Jane Smith</span><br>
-                            <span class="text-sm text-gray-400">Mentor, UEA</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications" class="py-20 reveal">
-            <h2 class="section-title">Certifications</h2>
-            <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-8">
-                <div class="card p-6 flex items-center">
-                    <i class="fas fa-certificate text-3xl accent-text mr-4"></i>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-100">Certified Data Scientist</h3>
-                        <p class="text-gray-400 text-sm">Data Science Council of America (DASCA)</p>
-                    </div>
-                </div>
-                <div class="card p-6 flex items-center">
-                    <i class="fas fa-certificate text-3xl accent-text mr-4"></i>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-100">Azure AI Engineer Associate</h3>
-                        <p class="text-gray-400 text-sm">Microsoft</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Publications Section -->
-        <section id="publications" class="py-20 reveal">
-            <h2 class="section-title">Publications</h2>
-            <div class="max-w-3xl mx-auto">
-                <ul class="list-disc list-inside text-gray-400 space-y-3">
-                    <li><a href="#" class="text-teal-300 underline">AI-driven metabolic engineering for biomanufacturing</a> (2024, Journal of Synthetic Biology)</li>
-                    <li><a href="#" class="text-teal-300 underline">Predictive analytics for genomics</a> (2023, Data Science Journal)</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Blog Section -->
-        <section id="blog" class="py-20 reveal">
+        <!-- Blog List -->
+        <section class="py-12">
             <h2 class="section-title">Research Journey Blog</h2>
-            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-                <div class="card p-6 flex flex-col">
-                    <h3 class="font-bold text-xl text-gray-100 mb-2">How I Started in Data Science</h3>
-                    <p class="text-gray-400 text-sm mb-4">A brief story about my entry into the world of data science and AI research.</p>
-                    <a href="#" class="text-teal-300 underline text-sm mt-auto">Read More</a>
-                </div>
-                <div class="card p-6 flex flex-col">
-                    <h3 class="font-bold text-xl text-gray-100 mb-2">Lessons from My PhD</h3>
-                    <p class="text-gray-400 text-sm mb-4">Reflections and tips from my ongoing doctoral journey in biochemical engineering.</p>
-                    <a href="#" class="text-teal-300 underline text-sm mt-auto">Read More</a>
-                </div>
-            </div>
-            <div class="text-center mt-8">
-                <a href="#" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-2 rounded-md hover:bg-teal-400/20 transition-colors text-lg">View All Blog Posts</a>
-            </div>
+            <div id="blog-list" class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"></div>
         </section>
-
-        <!-- Fun Facts Section -->
-        <section id="fun-facts" class="py-20 reveal">
-            <h2 class="section-title">Fun Facts</h2>
-            <div class="max-w-4xl mx-auto grid md:grid-cols-4 gap-8 text-center">
-                <div class="card p-6 flex flex-col items-center">
-                    <i class="fas fa-globe-asia text-3xl accent-text mb-2"></i>
-                    <span class="font-bold text-lg text-gray-100">10+</span>
-                    <span class="text-gray-400 text-sm">Countries Visited</span>
+        <!-- Sidebar: Categories, Recent Posts, Author Bio -->
+        <aside class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 mt-12">
+            <div class="md:col-span-1">
+                <div class="card p-6 mb-6">
+                    <h4 class="font-bold text-lg text-gray-100 mb-2">Categories</h4>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li><a href="#" class="hover:text-teal-300">Data Science</a></li>
+                        <li><a href="#" class="hover:text-teal-300">AI & ML</a></li>
+                        <li><a href="#" class="hover:text-teal-300">Research</a></li>
+                        <li><a href="#" class="hover:text-teal-300">Career</a></li>
+                    </ul>
                 </div>
-                <div class="card p-6 flex flex-col items-center">
-                    <i class="fas fa-camera text-3xl accent-text mb-2"></i>
-                    <span class="font-bold text-lg text-gray-100">5000+</span>
-                    <span class="text-gray-400 text-sm">Photos Taken</span>
+                <div class="card p-6 mb-6">
+                    <h4 class="font-bold text-lg text-gray-100 mb-2">Recent Posts</h4>
+                    <ul id="sidebar-recent" class="text-sm text-gray-400 space-y-1"></ul>
                 </div>
-                <div class="card p-6 flex flex-col items-center">
-                    <i class="fas fa-microphone text-3xl accent-text mb-2"></i>
-                    <span class="font-bold text-lg text-gray-100">20+</span>
-                    <span class="text-gray-400 text-sm">Talks Given</span>
-                </div>
-                <div class="card p-6 flex flex-col items-center">
-                    <i class="fas fa-mug-hot text-3xl accent-text mb-2"></i>
-                    <span class="font-bold text-lg text-gray-100">∞</span>
-                    <span class="text-gray-400 text-sm">Cups of Coffee</span>
+                <div class="card p-6">
+                    <h4 class="font-bold text-lg text-gray-100 mb-2">About the Author</h4>
+                    <img src="brain.png" alt="Profile Photo" class="w-16 h-16 rounded-full border-2 border-teal-400 mb-2 object-cover" />
+                    <p class="text-gray-400 text-sm">Tamoghna Das is a data scientist and researcher passionate about AI, biology, and education. Connect on <a href="https://www.linkedin.com/in/tamoghnadas12" class="text-teal-300 underline">LinkedIn</a>.</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact Form Section -->
-        <section id="contact-form" class="py-20 reveal">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="max-w-xl mx-auto bg-[#112240] p-8 rounded-xl shadow-lg">
-                <form action="#" method="POST" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-gray-300 mb-1">Name</label>
-                        <input type="text" id="name" name="name" class="w-full p-3 rounded bg-slate-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400" required />
-                    </div>
-                    <div>
-                        <label for="email" class="block text-gray-300 mb-1">Email</label>
-                        <input type="email" id="email" name="email" class="w-full p-3 rounded bg-slate-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400" required />
-                    </div>
-                    <div>
-                        <label for="message" class="block text-gray-300 mb-1">Message</label>
-                        <textarea id="message" name="message" rows="5" class="w-full p-3 rounded bg-slate-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400" required></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-teal-400 text-slate-900 px-6 py-3 rounded-md font-semibold text-lg hover:bg-teal-300 transition-transform duration-300">Send Message</button>
-                </form>
+            <!-- Blog Post Content Placeholder -->
+            <div class="md:col-span-3">
+                <div id="blog-post-view" style="display:none;"></div>
             </div>
-        </section>
+        </aside>
 
+        <div class="flex justify-end mb-6">
+            <button id="new-post-btn" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-2 rounded-md hover:bg-teal-400/20 transition-colors text-lg">New Blog Post</button>
+        </div>
+        <div id="new-post-form-container" class="max-w-3xl mx-auto mb-8" style="display:none;">
+            <form id="new-post-form" class="card p-6 space-y-4">
+                <h3 class="text-xl font-bold text-gray-100 mb-2">Create New Blog Post</h3>
+                <div>
+                    <label class="block text-gray-300 mb-1">Title</label>
+                    <input type="text" name="title" class="w-full p-3 rounded bg-slate-800 text-gray-100" required />
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-1">Summary (Markdown supported)</label>
+                    <textarea name="summary" rows="2" class="w-full p-3 rounded bg-slate-800 text-gray-100" required></textarea>
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-1">Tags (comma separated)</label>
+                    <input type="text" name="tags" class="w-full p-3 rounded bg-slate-800 text-gray-100" placeholder="e.g. AI, Data Science" />
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-1">Content (Markdown supported)</label>
+                    <textarea name="markdown" rows="8" class="w-full p-3 rounded bg-slate-800 text-gray-100" required></textarea>
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button type="button" id="cancel-post-btn" class="bg-slate-700 text-gray-300 px-6 py-2 rounded hover:bg-slate-600">Cancel</button>
+                    <button type="submit" class="bg-teal-400 text-slate-900 px-6 py-2 rounded font-semibold hover:bg-teal-300">Publish</button>
+                </div>
+            </form>
+        </div>
     </main>
 
-    <!-- Contact Footer -->
-    <footer id="contact" class="py-20 text-center">
+    <!-- Footer -->
+    <footer class="py-20 text-center">
         <div class="container mx-auto">
             <h2 class="text-2xl font-bold accent-text mb-2">What's Next?</h2>
             <h3 class="text-4xl font-extrabold text-gray-100 mb-4">Get In Touch</h3>
@@ -590,46 +111,174 @@
     </footer>
 
     <script>
+    // --- Blog Post Creation ---
+    const newPostBtn = document.getElementById('new-post-btn');
+    const newPostFormContainer = document.getElementById('new-post-form-container');
+    const newPostForm = document.getElementById('new-post-form');
+    const cancelPostBtn = document.getElementById('cancel-post-btn');
+    let localPosts = JSON.parse(localStorage.getItem('localPosts') || '[]');
+
+    newPostBtn.onclick = () => {
+        newPostFormContainer.style.display = 'block';
+        window.scrollTo({top: newPostFormContainer.offsetTop-80, behavior: 'smooth'});
+    };
+    cancelPostBtn.onclick = () => {
+        newPostFormContainer.style.display = 'none';
+        newPostForm.reset();
+    };
+    newPostForm.onsubmit = function(e) {
+        e.preventDefault();
+        const formData = new FormData(newPostForm);
+        const post = {
+            id: 'local-' + Date.now(),
+            title: formData.get('title'),
+            summary: formData.get('summary'),
+            tags: formData.get('tags').split(',').map(t => t.trim()).filter(Boolean),
+            markdown: formData.get('markdown'),
+            date: new Date().toISOString(),
+            author: 'You (local)',
+        };
+        localPosts.unshift(post);
+        localStorage.setItem('localPosts', JSON.stringify(localPosts));
+        posts.unshift(post);
+        renderBlogList();
+        renderRecent();
+        newPostFormContainer.style.display = 'none';
+        newPostForm.reset();
+    };
+
+    // --- Merge local posts with fetched posts ---
+    function mergePosts(fetched) {
+        return [...localPosts, ...fetched];
+    }
+
+    // --- Blog Dynamic Loader (updated) ---
+    fetch('posts.json')
+        .then(res => res.json())
+        .then(data => {
+            posts = mergePosts(data);
+            renderBlogList();
+            renderRecent();
+        });
+    // --- Blog Dynamic Loader ---
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Blog Post Routing by ID ---
+        function getQueryParam(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+        const postId = getQueryParam('id');
+        const postsListContainer = document.getElementById('blog-list');
+        const postViewContainer = document.getElementById('blog-post-view');
+        const sidebarRecent = document.getElementById('sidebar-recent');
+        let posts = [];
+
+        // Helper: Detect YouTube, Google Maps, or link
+        function embedMedia(md) {
+            // YouTube (youtube.com or youtu.be)
+            md = md.replace(/https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([\w-]+)/g, (m, id) =>
+                `<div class='aspect-w-16 aspect-h-9 my-4'><iframe class='w-full h-64' src='https://www.youtube.com/embed/${id}' frameborder='0' allowfullscreen></iframe></div>`
+            );
+            md = md.replace(/https?:\/\/(?:youtu.be)\/([\w-]+)/g, (m, id) =>
+                `<div class='aspect-w-16 aspect-h-9 my-4'><iframe class='w-full h-64' src='https://www.youtube.com/embed/${id}' frameborder='0' allowfullscreen></iframe></div>`
+            );
+            // Google Maps short links
+            md = md.replace(/https?:\/\/(goo\.gl\/maps\/[\w]+)/g, (m) =>
+                `<iframe class='w-full h-64 my-4 rounded' src='https://www.google.com/maps?q=${encodeURIComponent(m)}&output=embed' allowfullscreen loading='lazy'></iframe>`
+            );
+            // General links (rich preview fallback)
+            md = md.replace(/(https?:\/\/[\w\.-]+\.[a-z]{2,}(\S+)?)/g, (m) =>
+                `<a href='${m}' target='_blank' class='text-teal-300 underline break-all'>${m}</a>`
+            );
+            return md;
+        }
+
+        // Render blog list
+        function renderBlogList() {
+            postsListContainer.innerHTML = posts.map(post => `
+                <div class="card p-6 flex flex-col">
+                    <span class="text-xs text-teal-300 mb-2">${new Date(post.date).toLocaleDateString()}</span>
+                    <h3 class="font-bold text-xl text-gray-100 mb-2">${post.title}</h3>
+                    <p class="text-gray-400 text-sm mb-4">${post.summary}</p>
+                    <button class="text-teal-300 underline text-sm mt-auto" onclick="window.showBlogPost('${post.id}')">Read More</button>
+                </div>
+            `).join('');
+        }
+
+        // Render single post
+        window.showBlogPost = function(postId) {
+            const post = posts.find(p => p.id === postId);
+            if (!post) return;
+            postsListContainer.style.display = 'none';
+            postViewContainer.style.display = 'block';
+            postViewContainer.innerHTML = `
+                <div class="card p-8 mb-8">
+                    <button onclick="window.showBlogList(true)" class="mb-4 text-teal-300 underline">← Back to Blog</button>
+                    <h2 class="text-3xl font-bold text-gray-100 mb-2">${post.title}</h2>
+                    <div class="flex items-center text-sm text-gray-400 mb-4">
+                        <span>By ${post.author}</span>
+                        <span class="mx-2">|</span>
+                        <span>${new Date(post.date).toLocaleDateString()}</span>
+                        <span class="mx-2">|</span>
+                        <span class="text-teal-300">${post.tags.join(', ')}</span>
+                    </div>
+                    <div class="prose prose-invert max-w-none text-gray-300 mb-4">${marked.parse(embedMedia(post.markdown))}</div>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        ${post.tags.map(tag => `<span class="bg-teal-400/10 text-teal-300 px-3 py-1 rounded-full text-xs">#${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            history.pushState({postId}, '', `?id=${postId}`);
+            window.scrollTo({top: postViewContainer.offsetTop-80, behavior: 'smooth'});
+        };
+        window.showBlogList = function(fromBackBtn) {
+            postViewContainer.style.display = 'none';
+            postsListContainer.style.display = 'grid';
+            if (fromBackBtn) history.pushState({}, '', 'blog.html');
+            window.scrollTo({top: postsListContainer.offsetTop-80, behavior: 'smooth'});
+        };
+        window.onpopstate = function(event) {
+            if (getQueryParam('id')) {
+                window.showBlogPost(getQueryParam('id'));
+            } else {
+                window.showBlogList();
+            }
+        };
+
+        // Render recent posts in sidebar
+        function renderRecent() {
+            sidebarRecent.innerHTML = posts.slice(0,3).map(post =>
+                `<li><a href="#" onclick="window.showBlogPost('${post.id}');return false;" class="hover:text-teal-300">${post.title}</a></li>`
+            ).join('');
+        }
+
         // --- Mobile Menu Toggle ---
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        });
-
-        // --- Show More/Less Experience ---
-        const showMoreBtn = document.getElementById('show-more-btn');
-        const extraExperience = document.querySelectorAll('.extra-experience');
-        let isShowingMore = false;
-        showMoreBtn.addEventListener('click', () => {
-            isShowingMore = !isShowingMore;
-            extraExperience.forEach(item => {
-                item.classList.toggle('hidden');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
-            showMoreBtn.textContent = isShowingMore ? 'Show Less' : 'Show More';
-        });
-
-        // --- Reveal elements on scroll ---
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                } else {
-                    reveals[i].classList.remove("active");
-                }
-            }
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
         }
-        window.addEventListener("scroll", reveal);
-        // Initial check
-        reveal();
-    </script>
 
+        // Load posts
+        fetch('posts.json')
+            .then(res => res.json())
+            .then(data => {
+                posts = mergePosts(data);
+                if (postId) {
+                    renderBlogList();
+                    renderRecent();
+                    setTimeout(() => window.showBlogPost(postId), 0);
+                } else {
+                    renderBlogList();
+                    renderRecent();
+                }
+            });
+    });
+    </script>
 </body>
 </html>
