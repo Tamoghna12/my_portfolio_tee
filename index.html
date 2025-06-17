@@ -1,103 +1,474 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Tamoghna Das</title>
+    <title>Tamoghna Das - Data Scientist | AI Educator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="text-gray-300">
+<body>
     <!-- Header -->
-    <header class="header-glass shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold accent-text">TD</a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html#about" class="hover:text-teal-300 transition-colors">About</a>
-                <a href="index.html#experience" class="hover:text-teal-300 transition-colors">Experience</a>
-                <a href="index.html#skills" class="hover:text-teal-300 transition-colors">Skills</a>
-                <a href="index.html#honors" class="hover:text-teal-300 transition-colors">Honors</a>
-                <a href="index.html#education" class="hover:text-teal-300 transition-colors">Education</a>
-                <a href="blog.html" class="text-teal-300 font-semibold">Blog</a>
-                <a href="index.html#contact" class="hover:text-teal-300 transition-colors">Contact</a>
-            </div>
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-teal-300 focus:outline-none">
-                    <i class="fas fa-bars fa-lg"></i>
+    <header class="header-glass">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold">TD</a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden">
+                    <i class="fas fa-bars"></i>
                 </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden hidden">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="blog.html">Blog</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
     </header>
 
-    <main class="container mx-auto px-6 py-12">
-        <!-- Blog List -->
-        <section class="py-12">
-            <h2 class="section-title">Research Journey Blog</h2>
-            <div id="blog-list" class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"></div>
+    <main class="container mx-auto px-6">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="profile-container">
+                <div class="profile-ring"></div>
+                <img src="brain.png" alt="Profile Photo" class="profile-image"/>
+            </div>
+            <h1 class="hero-title">Tamoghna Das</h1>
+            <h2 class="hero-subtitle">Data Scientist | AI Researcher</h2>
+            <p class="hero-text">
+                I'm a data scientist and researcher specializing in the intersection of biology and AI, focused on developing innovative solutions that bridge these fields.
+            </p>
+            <div class="flex space-x-4">
+                <a href="mailto:tamoghnadas.12@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope mr-2"></i> Get In Touch
+                </a>
+                <a href="#" class="btn btn-secondary" download>
+                    <i class="fas fa-file-download mr-2"></i> Download CV
+                </a>
+            </div>
         </section>
-        <!-- Sidebar: Categories, Recent Posts, Author Bio -->
-        <aside class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 mt-12">
-            <div class="md:col-span-1">
-                <div class="card p-6 mb-6">
-                    <h4 class="font-bold text-lg text-gray-100 mb-2">Categories</h4>
-                    <ul class="text-sm text-gray-400 space-y-1">
-                        <li><a href="#" class="hover:text-teal-300">Data Science</a></li>
-                        <li><a href="#" class="hover:text-teal-300">AI & ML</a></li>
-                        <li><a href="#" class="hover:text-teal-300">Research</a></li>
-                        <li><a href="#" class="hover:text-teal-300">Career</a></li>
-                    </ul>
+
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-center">About Me</h2>
+                <div class="card max-w-4xl mx-auto p-8">
+                    <div class="space-y-4">
+                        <p>Hi there! I'm Tamoghna Das, a passionate data scientist from India, currently based in the UK. I thrive at the intersection of biological sciences and data, leveraging my background to bring a unique perspective to data analysis, modeling, and optimization.</p>
+                        <p>With a PhD in Chemical Engineering (Loughborough), an M.Sc. in Biochemical Engineering (UCL), and an M.Sc. in Data Science (UEA), my multidisciplinary foundation fuels my aspiration to develop web applications for analyzing and visualizing complex biological and non-biological data.</p>
+                        <p>Outside the professional sphere, I love traveling, photography, and videography. I'm excited to connect with like-minded professionals and explore new opportunities in the data science domain.</p>
+                    </div>
                 </div>
-                <div class="card p-6 mb-6">
-                    <h4 class="font-bold text-lg text-gray-100 mb-2">Recent Posts</h4>
-                    <ul id="sidebar-recent" class="text-sm text-gray-400 space-y-1"></ul>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <h2 class="section-title">Where I've Worked</h2>
+            <div class="timeline-container">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Nov 2023 - Present</div>
+                        <h3 class="timeline-title">Co-Founder</h3>
+                        <div class="timeline-subtitle">Artificial Intelligence Update</div>
+                        <ul>
+                            <li>Designing and building advanced AI models and applications</li>
+                            <li>Developing no-code/low-code software solutions</li>
+                            <li>Using LLMs for research, development, and content generation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Apr 2024 - Sep 2024</div>
+                        <h3 class="timeline-title">Data Analyst Technical Trainer</h3>
+                        <div class="timeline-subtitle">Just IT</div>
+                        <ul>
+                            <li>Empowered 20+ learners with data analytics skills (Excel, SQL, Power BI, Python, Azure)</li>
+                            <li>Achieved over 94% learner satisfaction score</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jul 2023 - Oct 2023</div>
+                        <h3 class="timeline-title">Chief AI Officer (CAIO)</h3>
+                        <div class="timeline-subtitle">Maxin Group Limited</div>
+                        <ul>
+                            <li>Defined the organisation's AI strategy and roadmap</li>
+                            <li>Oversaw development and implementation of AI projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 reveal">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="max-w-4xl mx-auto text-center">
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-brain text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Artificial Intelligence (AI)</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-robot text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Machine Learning</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fab fa-python text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Python</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-database text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">SQL</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-chart-bar text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Statistical Data Analysis</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-chart-pie text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Data Visualization</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-chart-line text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Power BI</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-table text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Pandas</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-th text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">NumPy</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-project-diagram text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Scikit-learn</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-code-branch text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Nextflow</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-cloud text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Galaxy</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fas fa-terminal text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Linux</span>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center">
+                        <i class="fab fa-microsoft text-3xl accent-text mb-2"></i>
+                        <span class="font-semibold text-lg text-gray-100 mb-1">Azure</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Honors & Awards Section -->
+        <section id="honors" class="py-20 reveal">
+            <h2 class="section-title">Honors & Awards</h2>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card p-6 flex items-center space-x-4">
+                    <i class="fas fa-award text-3xl accent-text"></i>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-100">The Ginkgo Bioworks Challenge</h3>
+                    </div>
+                </div>
+                 <div class="card p-6 flex items-center space-x-4">
+                    <i class="fas fa-award text-3xl accent-text"></i>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-100">2018 ICID Hackathon, Buenos Aires</h3>
+                    </div>
+                </div>
+                 <div class="card p-6 flex items-center space-x-4">
+                    <i class="fas fa-award text-3xl accent-text"></i>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-100">The International PhD Program in Protein Biotechnology (BioTop)</h3>
+                    </div>
+                </div>
+                 <div class="card p-6 flex items-center space-x-4">
+                    <i class="fas fa-award text-3xl accent-text"></i>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-100">Chem-a-Thon (Chemical-Hack), India</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-center">Education</h2>
+                <div class="timeline-container max-w-4xl mx-auto">
+                    <div class="timeline-item">
+                        <div class="content">
+                            <div class="date">Expected Sep 2024</div>
+                            <h3 class="text-xl font-bold">Doctor of Philosophy - PhD</h3>
+                            <p class="text-primary font-semibold">Loughborough University</p>
+                            <p class="mt-2">Biochemical Engineering (UKRI Scholarship)</p>
+                            <p class="mt-2"><span class="font-semibold">Thesis:</span> AI-driven metabolic engineering for biomanufacturing</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="content">
+                            <div class="date"></div>
+                            <h3 class="text-xl font-bold">Master of Science - MSc</h3>
+                            <p class="text-primary font-semibold">University of East Anglia</p>
+                            <p class="mt-2">Data Science</p>
+                            <p class="mt-2"><span class="font-semibold">Project:</span> Predictive analytics for genomics</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="content">
+                            <div class="date"></div>
+                            <h3 class="text-xl font-bold">MSc in Engineering</h3>
+                            <p class="text-primary font-semibold">University College London (UCL)</p>
+                            <p class="mt-2">Biochemical Engineering</p>
+                            <p class="mt-2"><span class="font-semibold">Project:</span> Metabolic pathway optimization</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="content">
+                            <div class="date"></div>
+                            <h3 class="text-xl font-bold">B.Tech (Biotechnology)</h3>
+                            <p class="text-primary font-semibold">Vellore Institute of Technology</p>
+                            <p class="mt-2">Biotechnology</p>
+                            <p class="mt-2"><span class="font-semibold">Project:</span> Enzyme engineering for biofuels</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloadable CV Button (Hero/About) -->
+        <div class="flex justify-center mt-4 mb-8">
+            <a href="#" download class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-2 rounded-md hover:bg-teal-400/20 transition-colors text-lg flex items-center">
+                <i class="fas fa-file-download mr-2"></i> Download CV
+            </a>
+        </div>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-20 reveal">
+            <h2 class="section-title">Project Portfolio</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="card p-4 flex flex-col items-center">
+                    <img src="project1.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
+                    <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 1</h3>
+                    <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
+                    <a href="#" class="text-teal-300 underline text-sm">View Details</a>
+                </div>
+                <div class="card p-4 flex flex-col items-center">
+                    <img src="project2.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
+                    <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 2</h3>
+                    <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
+                    <a href="#" class="text-teal-300 underline text-sm">View Details</a>
+                </div>
+            </div>
+            <div id="portfolio-extra" class="hidden">
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-4">
+                    <div class="card p-4 flex flex-col items-center">
+                        <img src="project3.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
+                        <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 3</h3>
+                        <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
+                        <a href="#" class="text-teal-300 underline text-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="portfolio-extra-btn" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-3 rounded-md hover:bg-teal-400/20 transition-colors" onclick="toggleSection('portfolio-extra')">Show More</button>
+            </div>
+        </section>
+
+        <!-- Animated Skill Bars Section -->
+        <section class="py-20 reveal">
+            <h2 class="section-title">Skill Proficiency</h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div>
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-100 font-semibold">Python</span>
+                        <span class="text-teal-300">95%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-4">
+                        <div class="bg-teal-400 h-4 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-100 font-semibold">Machine Learning</span>
+                        <span class="text-teal-300">90%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-4">
+                        <div class="bg-teal-400 h-4 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-100 font-semibold">Data Visualization</span>
+                        <span class="text-teal-300">85%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-4">
+                        <div class="bg-teal-400 h-4 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 reveal">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <p class="text-gray-300 italic mb-4">“Tamoghna is a brilliant data scientist who brings creativity and rigor to every project.”</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <span class="font-bold text-gray-100">John Doe</span><br>
+                            <span class="text-sm text-gray-400">Colleague, AI Update</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="card p-6">
-                    <h4 class="font-bold text-lg text-gray-100 mb-2">About the Author</h4>
-                    <img src="brain.png" alt="Profile Photo" class="w-16 h-16 rounded-full border-2 border-teal-400 mb-2 object-cover" />
-                    <p class="text-gray-400 text-sm">Tamoghna Das is a data scientist and researcher passionate about AI, biology, and education. Connect on <a href="https://www.linkedin.com/in/tamoghnadas12" class="text-teal-300 underline">LinkedIn</a>.</p>
+                    <p class="text-gray-300 italic mb-4">“A true professional with a passion for teaching and research.”</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Testimonial" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <span class="font-bold text-gray-100">Jane Smith</span><br>
+                            <span class="text-sm text-gray-400">Mentor, UEA</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Blog Post Content Placeholder -->
-            <div class="md:col-span-3">
-                <div id="blog-post-view" style="display:none;"></div>
-            </div>
-        </aside>
+        </section>
 
-        <div class="flex justify-end mb-6">
-            <button id="new-post-btn" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-2 rounded-md hover:bg-teal-400/20 transition-colors text-lg">New Blog Post</button>
-        </div>
-        <div id="new-post-form-container" class="max-w-3xl mx-auto mb-8" style="display:none;">
-            <form id="new-post-form" class="card p-6 space-y-4">
-                <h3 class="text-xl font-bold text-gray-100 mb-2">Create New Blog Post</h3>
-                <div>
-                    <label class="block text-gray-300 mb-1">Title</label>
-                    <input type="text" name="title" class="w-full p-3 rounded bg-slate-800 text-gray-100" required />
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20 reveal">
+            <h2 class="section-title">Certifications</h2>
+            <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="card p-6 flex items-center">
+                    <i class="fas fa-certificate text-3xl accent-text mr-4"></i>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-100">Certified Data Scientist</h3>
+                        <p class="text-gray-400 text-sm">Data Science Council of America (DASCA)</p>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-gray-300 mb-1">Summary (Markdown supported)</label>
-                    <textarea name="summary" rows="2" class="w-full p-3 rounded bg-slate-800 text-gray-100" required></textarea>
+                <div class="card p-6 flex items-center">
+                    <i class="fas fa-certificate text-3xl accent-text mr-4"></i>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-100">Azure AI Engineer Associate</h3>
+                        <p class="text-gray-400 text-sm">Microsoft</p>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-gray-300 mb-1">Tags (comma separated)</label>
-                    <input type="text" name="tags" class="w-full p-3 rounded bg-slate-800 text-gray-100" placeholder="e.g. AI, Data Science" />
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-20 reveal">
+            <h2 class="section-title">Publications</h2>
+            <div class="max-w-3xl mx-auto">
+                <ul class="list-disc list-inside text-gray-400 space-y-3">
+                    <li><a href="#" class="text-teal-300 underline">AI-driven metabolic engineering for biomanufacturing</a> (2024, Journal of Synthetic Biology)</li>
+                    <li><a href="#" class="text-teal-300 underline">Predictive analytics for genomics</a> (2023, Data Science Journal)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-20 reveal">
+            <h2 class="section-title">Research Journey Blog</h2>
+            <div id="blog-loading" class="text-center text-teal-300 mb-4" style="display:none;">Loading blog posts...</div>
+            <div id="blog-list" class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8"></div>
+            <div id="blog-extra" class="hidden">
+                <!-- Additional blog posts will be loaded here by JS if needed -->
+            </div>
+            <div class="text-center mt-8">
+                <button id="blog-extra-btn" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-2 rounded-md hover:bg-teal-400/20 transition-colors text-lg" onclick="toggleSection('blog-extra')">Show More</button>
+                <a href="blog.html" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-2 rounded-md hover:bg-teal-400/20 transition-colors text-lg ml-2">View All Blog Posts</a>
+            </div>
+        </section>
+
+        <!-- Fun Facts Section -->
+        <section id="fun-facts" class="py-20 reveal">
+            <h2 class="section-title">Fun Facts</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-4 gap-8 text-center">
+                <div class="card p-6 flex flex-col items-center">
+                    <i class="fas fa-globe-asia text-3xl accent-text mb-2"></i>
+                    <span class="font-bold text-lg text-gray-100">10+</span>
+                    <span class="text-gray-400 text-sm">Countries Visited</span>
                 </div>
-                <div>
-                    <label class="block text-gray-300 mb-1">Content (Markdown supported)</label>
-                    <textarea name="markdown" rows="8" class="w-full p-3 rounded bg-slate-800 text-gray-100" required></textarea>
+                <div class="card p-6 flex flex-col items-center">
+                    <i class="fas fa-camera text-3xl accent-text mb-2"></i>
+                    <span class="font-bold text-lg text-gray-100">5000+</span>
+                    <span class="text-gray-400 text-sm">Photos Taken</span>
                 </div>
-                <div class="flex justify-end gap-4">
-                    <button type="button" id="cancel-post-btn" class="bg-slate-700 text-gray-300 px-6 py-2 rounded hover:bg-slate-600">Cancel</button>
-                    <button type="submit" class="bg-teal-400 text-slate-900 px-6 py-2 rounded font-semibold hover:bg-teal-300">Publish</button>
+                <div class="card p-6 flex flex-col items-center">
+                    <i class="fas fa-microphone text-3xl accent-text mb-2"></i>
+                    <span class="font-bold text-lg text-gray-100">20+</span>
+                    <span class="text-gray-400 text-sm">Talks Given</span>
                 </div>
-            </form>
-        </div>
+                <div class="card p-6 flex flex-col items-center">
+                    <i class="fas fa-mug-hot text-3xl accent-text mb-2"></i>
+                    <span class="font-bold text-lg text-gray-100">∞</span>
+                    <span class="text-gray-400 text-sm">Cups of Coffee</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact-form" class="py-20 reveal">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="max-w-xl mx-auto bg-[#112240] p-8 rounded-xl shadow-lg">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-300 mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 rounded bg-slate-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400" required />
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 mb-1">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 rounded bg-slate-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400" required />
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full p-3 rounded bg-slate-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-teal-400 text-slate-900 px-6 py-3 rounded-md font-semibold text-lg hover:bg-teal-300 transition-transform duration-300">Send Message</button>
+                </form>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="py-20 text-center">
+    <!-- Contact Footer -->
+    <footer id="contact" class="py-20 text-center">
         <div class="container mx-auto">
             <h2 class="text-2xl font-bold accent-text mb-2">What's Next?</h2>
             <h3 class="text-4xl font-extrabold text-gray-100 mb-4">Get In Touch</h3>
@@ -110,175 +481,205 @@
         </div>
     </footer>
 
+    <!-- Collapsible Section Utility -->
     <script>
-    // --- Blog Post Creation ---
-    const newPostBtn = document.getElementById('new-post-btn');
-    const newPostFormContainer = document.getElementById('new-post-form-container');
-    const newPostForm = document.getElementById('new-post-form');
-    const cancelPostBtn = document.getElementById('cancel-post-btn');
-    let localPosts = JSON.parse(localStorage.getItem('localPosts') || '[]');
-
-    newPostBtn.onclick = () => {
-        newPostFormContainer.style.display = 'block';
-        window.scrollTo({top: newPostFormContainer.offsetTop-80, behavior: 'smooth'});
-    };
-    cancelPostBtn.onclick = () => {
-        newPostFormContainer.style.display = 'none';
-        newPostForm.reset();
-    };
-    newPostForm.onsubmit = function(e) {
-        e.preventDefault();
-        const formData = new FormData(newPostForm);
-        const post = {
-            id: 'local-' + Date.now(),
-            title: formData.get('title'),
-            summary: formData.get('summary'),
-            tags: formData.get('tags').split(',').map(t => t.trim()).filter(Boolean),
-            markdown: formData.get('markdown'),
-            date: new Date().toISOString(),
-            author: 'You (local)',
-        };
-        localPosts.unshift(post);
-        localStorage.setItem('localPosts', JSON.stringify(localPosts));
-        posts.unshift(post);
-        renderBlogList();
-        renderRecent();
-        newPostFormContainer.style.display = 'none';
-        newPostForm.reset();
-    };
-
-    // --- Merge local posts with fetched posts ---
-    function mergePosts(fetched) {
-        return [...localPosts, ...fetched];
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        const btn = document.getElementById(id + '-btn');
+        if (section.classList.contains('hidden')) {
+            section.classList.remove('hidden');
+            btn.innerText = 'Show Less';
+        } else {
+            section.classList.add('hidden');
+            btn.innerText = 'Show More';
+        }
     }
+    </script>
 
-    // --- Blog Dynamic Loader (updated) ---
-    fetch('posts.json')
-        .then(res => res.json())
-        .then(data => {
-            posts = mergePosts(data);
-            renderBlogList();
-            renderRecent();
-        });
-    // --- Blog Dynamic Loader ---
+    <script src="marked.min.js"></script>
+    <!-- TEMP: Disable all custom JS for debugging -->
+    <!-- <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // --- Blog Post Routing by ID ---
-        function getQueryParam(name) {
-            const url = new URL(window.location.href);
-            return url.searchParams.get(name);
-        }
-        const postId = getQueryParam('id');
-        const postsListContainer = document.getElementById('blog-list');
-        const postViewContainer = document.getElementById('blog-post-view');
-        const sidebarRecent = document.getElementById('sidebar-recent');
-        let posts = [];
+        // ...all JS temporarily disabled...
+    });
+    </script> -->
 
-        // Helper: Detect YouTube, Google Maps, or link
-        function embedMedia(md) {
-            // YouTube (youtube.com or youtu.be)
-            md = md.replace(/https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([\w-]+)/g, (m, id) =>
-                `<div class='aspect-w-16 aspect-h-9 my-4'><iframe class='w-full h-64' src='https://www.youtube.com/embed/${id}' frameborder='0' allowfullscreen></iframe></div>`
-            );
-            md = md.replace(/https?:\/\/(?:youtu.be)\/([\w-]+)/g, (m, id) =>
-                `<div class='aspect-w-16 aspect-h-9 my-4'><iframe class='w-full h-64' src='https://www.youtube.com/embed/${id}' frameborder='0' allowfullscreen></iframe></div>`
-            );
-            // Google Maps short links
-            md = md.replace(/https?:\/\/(goo\.gl\/maps\/[\w]+)/g, (m) =>
-                `<iframe class='w-full h-64 my-4 rounded' src='https://www.google.com/maps?q=${encodeURIComponent(m)}&output=embed' allowfullscreen loading='lazy'></iframe>`
-            );
-            // General links (rich preview fallback)
-            md = md.replace(/(https?:\/\/[\w\.-]+\.[a-z]{2,}(\S+)?)/g, (m) =>
-                `<a href='${m}' target='_blank' class='text-teal-300 underline break-all'>${m}</a>`
-            );
-            return md;
-        }
-
-        // Render blog list
-        function renderBlogList() {
-            postsListContainer.innerHTML = posts.map(post => `
-                <div class="card p-6 flex flex-col">
-                    <span class="text-xs text-teal-300 mb-2">${new Date(post.date).toLocaleDateString()}</span>
-                    <h3 class="font-bold text-xl text-gray-100 mb-2">${post.title}</h3>
-                    <p class="text-gray-400 text-sm mb-4">${post.summary}</p>
-                    <button class="text-teal-300 underline text-sm mt-auto" onclick="window.showBlogPost('${post.id}')">Read More</button>
-                </div>
-            `).join('');
-        }
-
-        // Render single post
-        window.showBlogPost = function(postId) {
-            const post = posts.find(p => p.id === postId);
-            if (!post) return;
-            postsListContainer.style.display = 'none';
-            postViewContainer.style.display = 'block';
-            postViewContainer.innerHTML = `
-                <div class="card p-8 mb-8">
-                    <button onclick="window.showBlogList(true)" class="mb-4 text-teal-300 underline">← Back to Blog</button>
-                    <h2 class="text-3xl font-bold text-gray-100 mb-2">${post.title}</h2>
-                    <div class="flex items-center text-sm text-gray-400 mb-4">
-                        <span>By ${post.author}</span>
-                        <span class="mx-2">|</span>
-                        <span>${new Date(post.date).toLocaleDateString()}</span>
-                        <span class="mx-2">|</span>
-                        <span class="text-teal-300">${post.tags.join(', ')}</span>
-                    </div>
-                    <div class="prose prose-invert max-w-none text-gray-300 mb-4">${marked.parse(embedMedia(post.markdown))}</div>
-                    <div class="flex flex-wrap gap-2 mt-4">
-                        ${post.tags.map(tag => `<span class="bg-teal-400/10 text-teal-300 px-3 py-1 rounded-full text-xs">#${tag}</span>`).join('')}
-                    </div>
-                </div>
-            `;
-            history.pushState({postId}, '', `?id=${postId}`);
-            window.scrollTo({top: postViewContainer.offsetTop-80, behavior: 'smooth'});
-        };
-        window.showBlogList = function(fromBackBtn) {
-            postViewContainer.style.display = 'none';
-            postsListContainer.style.display = 'grid';
-            if (fromBackBtn) history.pushState({}, '', 'blog.html');
-            window.scrollTo({top: postsListContainer.offsetTop-80, behavior: 'smooth'});
-        };
-        window.onpopstate = function(event) {
-            if (getQueryParam('id')) {
-                window.showBlogPost(getQueryParam('id'));
-            } else {
-                window.showBlogList();
-            }
-        };
-
-        // Render recent posts in sidebar
-        function renderRecent() {
-            sidebarRecent.innerHTML = posts.slice(0,3).map(post =>
-                `<li><a href="#" onclick="window.showBlogPost('${post.id}');return false;" class="hover:text-teal-300">${post.title}</a></li>`
-            ).join('');
-        }
-
-        // --- Mobile Menu Toggle ---
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-            });
-        }
-
-        // Load posts
-        fetch('posts.json')
-            .then(res => res.json())
-            .then(data => {
-                posts = mergePosts(data);
-                if (postId) {
-                    renderBlogList();
-                    renderRecent();
-                    setTimeout(() => window.showBlogPost(postId), 0);
-                } else {
-                    renderBlogList();
-                    renderRecent();
-                }
-            });
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-8 right-8 bg-teal-400 text-slate-900 px-4 py-2 rounded-full shadow-lg hover:bg-teal-300 z-50" style="display:none;">↑ Top</button>
+    <script>
+    window.addEventListener('scroll', function() {
+        document.getElementById('backToTop').style.display = window.scrollY > 400 ? 'block' : 'none';
     });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Remove loading overlay
+        const loadingOverlay = document.querySelector('.loading-overlay');
+        window.addEventListener('load', () => {
+            loadingOverlay.style.opacity = '0';
+            setTimeout(() => {
+                loadingOverlay.style.display = 'none';
+            }, 500);
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            scrollObserver.observe(el);
+        });
+
+        // Active nav link
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function setActiveLink() {
+            let index = sections.length;
+            while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+            navLinks.forEach(link => link.classList.remove('active'));
+            navLinks[index]?.classList.add('active');
+        }
+
+        window.addEventListener('scroll', setActiveLink);
+        setActiveLink();
+
+        // Mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.querySelector('i').classList.toggle('fa-bars');
+            menuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close mobile menu on click outside
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('timeline-item')) {
+                        entry.target.classList.add('slide-in');
+                    } else {
+                        entry.target.classList.add('fade-in');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements that should animate
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Progress bar
+        const progressBar = document.querySelector('.progress-bar');
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+
+        // Floating navigation
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.floating-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Theme toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        }
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
+        setTheme(savedTheme);
+
+        // Theme toggle click handler
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        // Handle system theme changes
+        prefersDark.addEventListener('change', (e) => {
+            setTheme(e.matches ? 'dark' : 'light');
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+    </script>
+
 </body>
 </html>
