@@ -1,194 +1,120 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Tamoghna Das</title>
+    <title>Blog - Tamoghna Das</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0a192f; color: #ccd6f6; }
-        .section-title {
-            font-size: 1.875rem; /* text-3xl */
-            font-weight: 700; /* font-bold */
-            color: #f1f5f9; /* text-gray-100 */
-            margin-bottom: 3rem; /* mb-12 */
-            text-align: center;
-        }
-        .card {
-            background-color: #112240;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.1), 0 4px 6px -4px rgba(16, 185, 129, 0.1); /* shadow-lg */
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-        .card:hover {
-            box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.2), 0 8px 10px -6px rgba(16, 185, 129, 0.2); /* shadow-2xl */
-            transform: translateY(-0.5rem);
-        }
-        .accent-text { color: #64ffda; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="text-gray-300">
+<body>
     <!-- Header -->
-    <header class="header-glass shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="portfolio.html" class="text-2xl font-bold accent-text">TD</a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="portfolio.html#about" class="hover:text-teal-300 transition-colors">About</a>
-                <a href="portfolio.html#experience" class="hover:text-teal-300 transition-colors">Experience</a>
-                <a href="portfolio.html#skills" class="hover:text-teal-300 transition-colors">Skills</a>
-                <a href="portfolio.html#honors" class="hover:text-teal-300 transition-colors">Honors</a>
-                <a href="portfolio.html#education" class="hover:text-teal-300 transition-colors">Education</a>
-                <a href="blog.html" class="text-teal-300 font-semibold">Blog</a>
-                <a href="portfolio.html#contact" class="hover:text-teal-300 transition-colors">Contact</a>
-            </div>
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-teal-300 focus:outline-none">
+    <header class="header-glass">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold">TD</a>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link hover:text-teal-300 transition-colors">Home</a>
+                    <a href="blog.html" class="nav-link hover:text-teal-300 transition-colors active">Blog</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-teal-300 focus:outline-none">
                     <i class="fas fa-bars fa-lg"></i>
                 </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden hidden bg-slate-900/95 backdrop-blur-sm mt-4 rounded-lg">
+                <a href="index.html" class="block py-3 px-4 hover:text-teal-300 transition-colors">Home</a>
+                <a href="blog.html" class="block py-3 px-4 hover:text-teal-300 transition-colors">Blog</a>
             </div>
         </nav>
     </header>
 
-    <main class="container mx-auto px-6 py-12">
-        <!-- Blog List -->
-        <section class="py-12">
-            <h2 class="section-title">Research Journey Blog</h2>
-            <div id="blog-list" class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"></div>
-        </section>
-        <!-- Sidebar: Categories, Recent Posts, Author Bio -->
-        <aside class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 mt-12">
-            <div class="md:col-span-1">
-                <div class="card p-6 mb-6">
-                    <h4 class="font-bold text-lg text-gray-100 mb-2">Categories</h4>
-                    <ul class="text-sm text-gray-400 space-y-1">
-                        <li><a href="#" class="hover:text-teal-300">Data Science</a></li>
-                        <li><a href="#" class="hover:text-teal-300">AI & ML</a></li>
-                        <li><a href="#" class="hover:text-teal-300">Research</a></li>
-                        <li><a href="#" class="hover:text-teal-300">Career</a></li>
-                    </ul>
-                </div>
-                <div class="card p-6 mb-6">
-                    <h4 class="font-bold text-lg text-gray-100 mb-2">Recent Posts</h4>
-                    <ul id="sidebar-recent" class="text-sm text-gray-400 space-y-1"></ul>
-                </div>
-                <div class="card p-6">
-                    <h4 class="font-bold text-lg text-gray-100 mb-2">About the Author</h4>
-                    <img src="brain.png" alt="Profile Photo" class="w-16 h-16 rounded-full border-2 border-teal-400 mb-2 object-cover" />
-                    <p class="text-gray-400 text-sm">Tamoghna Das is a data scientist and researcher passionate about AI, biology, and education. Connect on <a href="https://www.linkedin.com/in/tamoghnadas12" class="text-teal-300 underline">LinkedIn</a>.</p>
-                </div>
-            </div>
-            <!-- Blog Post Content Placeholder -->
-            <div class="md:col-span-3">
-                <div id="blog-post-view" style="display:none;"></div>
-            </div>
-        </aside>
+    <main class="container mx-auto px-6 pt-32">
+        <h1 class="text-4xl font-bold mb-8">Blog Posts</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
+            <!-- Blog posts will be dynamically inserted here -->
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="py-20 text-center">
-        <div class="container mx-auto">
-            <h2 class="text-2xl font-bold accent-text mb-2">What's Next?</h2>
-            <h3 class="text-4xl font-extrabold text-gray-100 mb-4">Get In Touch</h3>
-            <p class="text-lg mb-8 max-w-xl mx-auto text-gray-400">I'm currently seeking new opportunities and my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-            <a href="mailto:tamoghnadas.12@gmail.com" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-8 py-4 rounded-md hover:bg-teal-400/20 transition-colors text-lg">Say Hello</a>
-            <div class="flex justify-center items-center space-x-6 text-2xl mt-12 text-gray-400">
-                <a href="https://www.linkedin.com/in/tamoghnadas12" target="_blank" rel="noopener noreferrer" class="hover:text-teal-300 transition-colors"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <p class="mt-8 text-gray-500 text-sm">&copy; 2024 Tamoghna Das. Designed & Built by AI.</p>
-        </div>
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
     <script>
-    // --- Blog Dynamic Loader ---
-    document.addEventListener('DOMContentLoaded', function() {
-        const postsListContainer = document.getElementById('blog-list');
-        const postViewContainer = document.getElementById('blog-post-view');
-        const sidebarRecent = document.getElementById('sidebar-recent');
-        let posts = [];
-
-        // Helper: Detect YouTube, Google Maps, or link
-        function embedMedia(md) {
-            // YouTube (youtube.com or youtu.be)
-            md = md.replace(/https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([\w-]+)/g, (m, id) =>
-                `<div class='aspect-w-16 aspect-h-9 my-4'><iframe class='w-full h-64' src='https://www.youtube.com/embed/${id}' frameborder='0' allowfullscreen></iframe></div>`
-            );
-            md = md.replace(/https?:\/\/(?:youtu.be)\/([\w-]+)/g, (m, id) =>
-                `<div class='aspect-w-16 aspect-h-9 my-4'><iframe class='w-full h-64' src='https://www.youtube.com/embed/${id}' frameborder='0' allowfullscreen></iframe></div>`
-            );
-            // Google Maps short links
-            md = md.replace(/https?:\/\/(goo\.gl\/maps\/[\w]+)/g, (m) =>
-                `<iframe class='w-full h-64 my-4 rounded' src='https://www.google.com/maps?q=${encodeURIComponent(m)}&output=embed' allowfullscreen loading='lazy'></iframe>`
-            );
-            // General links (rich preview fallback)
-            md = md.replace(/(https?:\/\/[\w\.-]+\.[a-z]{2,}(\S+)?)/g, (m) =>
-                `<a href='${m}' target='_blank' class='text-teal-300 underline break-all'>${m}</a>`
-            );
-            return md;
-        }
-
-        // Render blog list
-        function renderBlogList() {
-            postsListContainer.innerHTML = posts.map(post => `
-                <div class="card p-6 flex flex-col">
-                    <span class="text-xs text-teal-300 mb-2">${new Date(post.date).toLocaleDateString()}</span>
-                    <h3 class="font-bold text-xl text-gray-100 mb-2">${post.title}</h3>
-                    <p class="text-gray-400 text-sm mb-4">${post.summary}</p>
-                    <button class="text-teal-300 underline text-sm mt-auto" onclick="window.showBlogPost('${post.id}')">Read More</button>
-                </div>
-            `).join('');
-        }
-
-        // Render single post
-        window.showBlogPost = function(postId) {
-            const post = posts.find(p => p.id === postId);
-            if (!post) return;
-            postsListContainer.style.display = 'none';
-            postViewContainer.style.display = 'block';
-            postViewContainer.innerHTML = `
-                <div class="card p-8 mb-8">
-                    <button onclick="window.showBlogList()" class="mb-4 text-teal-300 underline">← Back to Blog</button>
-                    <h2 class="text-3xl font-bold text-gray-100 mb-2">${post.title}</h2>
-                    <div class="flex items-center text-sm text-gray-400 mb-4">
-                        <span>By ${post.author}</span>
-                        <span class="mx-2">|</span>
-                        <span>${new Date(post.date).toLocaleDateString()}</span>
-                        <span class="mx-2">|</span>
-                        <span class="text-teal-300">${post.tags.join(', ')}</span>
-                    </div>
-                    <div class="prose prose-invert max-w-none text-gray-300 mb-4">${marked.parse(embedMedia(post.markdown))}</div>
-                    <div class="flex flex-wrap gap-2 mt-4">
-                        ${post.tags.map(tag => `<span class="bg-teal-400/10 text-teal-300 px-3 py-1 rounded-full text-xs">#${tag}</span>`).join('')}
-                    </div>
-                </div>
-            `;
-            window.scrollTo({top: postViewContainer.offsetTop-80, behavior: 'smooth'});
-        };
-        window.showBlogList = function() {
-            postViewContainer.style.display = 'none';
-            postsListContainer.style.display = 'grid';
-            window.scrollTo({top: postsListContainer.offsetTop-80, behavior: 'smooth'});
-        };
-
-        // Render recent posts in sidebar
-        function renderRecent() {
-            sidebarRecent.innerHTML = posts.slice(0,3).map(post =>
-                `<li><a href="#" onclick="window.showBlogPost('${post.id}');return false;" class="hover:text-teal-300">${post.title}</a></li>`
-            ).join('');
-        }
-
-        // Load posts
-        fetch('posts.json')
-            .then(res => res.json())
-            .then(data => {
-                posts = data;
-                renderBlogList();
-                renderRecent();
+        // Function to parse frontmatter
+        function parseFrontmatter(markdown) {
+            const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
+            const match = markdown.match(frontmatterRegex);
+            
+            if (!match) return null;
+            
+            const frontmatter = match[1];
+            const metadata = {};
+            frontmatter.split('\n').forEach(line => {
+                const [key, ...values] = line.split(':');
+                if (key && values.length > 0) {
+                    metadata[key.trim()] = values.join(':').trim();
+                }
             });
-    });
+            
+            return metadata;
+        }
+
+        // Function to create blog card
+        function createBlogCard(metadata, slug) {
+            return `
+                <article class="card p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <h2 class="text-2xl font-bold mb-2">${metadata.title}</h2>
+                    <div class="blog-meta text-sm text-gray-400 mb-4">
+                        <span class="mr-4"><i class="far fa-calendar-alt mr-2"></i>${metadata.date}</span>
+                        <span><i class="fas fa-tags mr-2"></i>${metadata.category}</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">${metadata.description}</p>
+                    <a href="blog/posts/${slug}.html" class="btn btn-primary inline-block">Read More</a>
+                </article>
+            `;
+        }
+
+        // Load blog posts
+        async function loadBlogPosts() {
+            try {
+                const posts = [
+                    'why-i-love-data-science.md'
+                    // Add more posts here as you create them
+                ];
+
+                const blogGrid = document.getElementById('blog-grid');
+                
+                for (const post of posts) {
+                    const response = await fetch(`blog/posts/${post}`);
+                    if (!response.ok) continue;
+                    
+                    const markdown = await response.text();
+                    const metadata = parseFrontmatter(markdown);
+                    if (!metadata) continue;
+
+                    const slug = post.replace('.md', '');
+                    blogGrid.innerHTML += createBlogCard(metadata, slug);
+                }
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+            }
+        }
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Load posts when page loads
+        document.addEventListener('DOMContentLoaded', loadBlogPosts);
     </script>
 </body>
 </html>
