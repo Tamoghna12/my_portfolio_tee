@@ -10,38 +10,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
     <!-- Header -->
     <header class="header-glass">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="#" class="text-2xl font-bold">TD</a>
-                
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#experience" class="nav-link">Experience</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#education" class="nav-link">Education</a>
-                    <a href="#portfolio" class="nav-link">Portfolio</a>
-                    <a href="blog.html" class="nav-link">Blog</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#about" class="nav-link hover:text-teal-300 transition-colors">About</a>
+                    <a href="#experience" class="nav-link hover:text-teal-300 transition-colors">Experience</a>
+                    <a href="#skills" class="nav-link hover:text-teal-300 transition-colors">Skills</a>
+                    <a href="#education" class="nav-link hover:text-teal-300 transition-colors">Education</a>
+                    <a href="#portfolio" class="nav-link hover:text-teal-300 transition-colors">Portfolio</a>
+                    <a href="#contact" class="nav-link hover:text-teal-300 transition-colors">Contact</a>
+                    <a href="blog.html" class="nav-link hover:text-teal-300 transition-colors">Blog</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden">
-                    <i class="fas fa-bars"></i>
+                <button id="menu-btn" class="md:hidden text-teal-300 focus:outline-none" aria-label="Toggle menu">
+                    <i class="fas fa-bars fa-lg"></i>
                 </button>
             </div>
 
             <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="mobile-menu md:hidden hidden">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#skills">Skills</a>
-                <a href="#education">Education</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="blog.html">Blog</a>
-                <a href="#contact">Contact</a>
+            <div id="mobile-menu" class="mobile-menu md:hidden hidden bg-slate-900/95 backdrop-blur-sm mt-4 rounded-lg">
+                <a href="#about" class="block py-3 px-4 hover:text-teal-300 transition-colors">About</a>
+                <a href="#experience" class="block py-3 px-4 hover:text-teal-300 transition-colors">Experience</a>
+                <a href="#skills" class="block py-3 px-4 hover:text-teal-300 transition-colors">Skills</a>
+                <a href="#education" class="block py-3 px-4 hover:text-teal-300 transition-colors">Education</a>
+                <a href="#portfolio" class="block py-3 px-4 hover:text-teal-300 transition-colors">Portfolio</a>
+                <a href="#contact" class="block py-3 px-4 hover:text-teal-300 transition-colors">Contact</a>
+                <a href="blog.html" class="block py-3 px-4 hover:text-teal-300 transition-colors">Blog</a>
             </div>
         </nav>
     </header>
@@ -129,66 +133,229 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-20 reveal">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="max-w-4xl mx-auto text-center">
-                
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-brain text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Artificial Intelligence (AI)</span>
+        <section id="skills" class="py-20">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">                <!-- AI & Machine Learning -->
+                <div class="skill-card" data-category="ai-ml">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <i class="fas fa-brain text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">AI & ML</h3>
+                            <p class="text-sm text-gray-400">Click to explore</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3 class="text-lg font-bold mb-4">AI & Machine Learning</h3>
+                            
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-robot text-sm mr-2"></i>Machine Learning
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="95">Supervised Learning</li>
+                                    <li data-level="90">Unsupervised Learning</li>
+                                    <li data-level="88">Reinforcement Learning</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-network-wired text-sm mr-2"></i>Neural Networks
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="92">CNN</li>
+                                    <li data-level="90">RNN/LSTM</li>
+                                    <li data-level="88">Transformers</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-comments text-sm mr-2"></i>NLP & LLMs
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="95">Text Processing</li>
+                                    <li data-level="92">Language Models</li>
+                                    <li data-level="90">Sentiment Analysis</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-robot text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Machine Learning</span>
+                </div>                <!-- Data Science & Analytics -->
+                <div class="skill-card" data-category="data-science">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <i class="fas fa-chart-line text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Data Science</h3>
+                            <p class="text-sm text-gray-400">Click to explore</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3 class="text-lg font-bold mb-4">Data Science Skills</h3>
+                            
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-calculator text-sm mr-2"></i>Statistical Analysis
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="95">Hypothesis Testing</li>
+                                    <li data-level="92">Regression Analysis</li>
+                                    <li data-level="90">Bayesian Statistics</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-database text-sm mr-2"></i>Data Processing
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="95">Data Cleaning</li>
+                                    <li data-level="92">Feature Engineering</li>
+                                    <li data-level="90">ETL Pipelines</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-chart-bar text-sm mr-2"></i>Analysis Techniques
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="95">Exploratory Analysis</li>
+                                    <li data-level="92">Time Series Analysis</li>
+                                    <li data-level="88">A/B Testing</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fab fa-python text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Python</span>
+                </div>                <!-- Programming Languages -->
+                <div class="skill-card" data-category="programming">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <i class="fas fa-code text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Programming</h3>
+                            <p class="text-sm text-gray-400">Click to explore</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3 class="text-lg font-bold mb-4">Programming Skills</h3>
+                            
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-terminal text-sm mr-2"></i>Core Languages
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="95">Python</li>
+                                    <li data-level="88">R</li>
+                                    <li data-level="85">Java</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-desktop text-sm mr-2"></i>Web Technologies
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="88">JavaScript</li>
+                                    <li data-level="85">TypeScript</li>
+                                    <li data-level="82">HTML/CSS</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-database text-sm mr-2"></i>Database
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="90">SQL</li>
+                                    <li data-level="85">MongoDB</li>
+                                    <li data-level="82">PostgreSQL</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-database text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">SQL</span>
+                </div>                <!-- ML Libraries & Frameworks -->
+                <div class="skill-card" data-category="frameworks">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <i class="fas fa-microchip text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">ML Frameworks</h3>
+                            <p class="text-sm text-gray-400">Click to explore</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3 class="text-lg font-bold mb-4">Libraries & Frameworks</h3>
+                            
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-layer-group text-sm mr-2"></i>Deep Learning
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="92">TensorFlow</li>
+                                    <li data-level="90">PyTorch</li>
+                                    <li data-level="88">Keras</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-cogs text-sm mr-2"></i>ML Tools
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="95">Scikit-learn</li>
+                                    <li data-level="90">XGBoost</li>
+                                    <li data-level="88">LightGBM</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-subcategory">
+                                <h4 class="skill-subcategory-title">
+                                    <i class="fas fa-language text-sm mr-2"></i>NLP Tools
+                                </h4>
+                                <ul class="skill-list">
+                                    <li data-level="92">Hugging Face</li>
+                                    <li data-level="88">spaCy</li>
+                                    <li data-level="85">NLTK</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-chart-bar text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Statistical Data Analysis</span>
+                </div>
+
+                <!-- Data Tools & Visualization -->
+                <div class="skill-card" data-category="data-tools">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <i class="fas fa-chart-bar text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Data Tools</h3>
+                            <p class="text-sm text-gray-400">Click to explore</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3 class="text-lg font-bold mb-4">Data Tools & Viz</h3>
+                            <ul class="skill-list">
+                                <li data-level="95">Pandas/NumPy</li>
+                                <li data-level="90">Matplotlib/Seaborn</li>
+                                <li data-level="88">Plotly/Dash</li>
+                                <li data-level="85">PowerBI/Tableau</li>
+                                <li data-level="82">D3.js</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-chart-pie text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Data Visualization</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-chart-line text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Power BI</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-table text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Pandas</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-th text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">NumPy</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-project-diagram text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Scikit-learn</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-code-branch text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Nextflow</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-cloud text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Galaxy</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fas fa-terminal text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Linux</span>
-                    </div>
-                    <div class="card p-6 flex flex-col items-center">
-                        <i class="fab fa-microsoft text-3xl accent-text mb-2"></i>
-                        <span class="font-semibold text-lg text-gray-100 mb-1">Azure</span>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="skill-card" data-category="cloud">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <i class="fas fa-cloud text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Cloud & DevOps</h3>
+                            <p class="text-sm text-gray-400">Click to explore</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3 class="text-lg font-bold mb-4">Cloud & Infrastructure</h3>
+                            <ul class="skill-list">
+                                <li data-level="88">AWS Services</li>
+                                <li data-level="85">Docker/Kubernetes</li>
+                                <li data-level="82">CI/CD Pipelines</li>
+                                <li data-level="80">MLOps</li>
+                                <li data-level="78">Google Cloud</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,35 +444,46 @@
             </a>
         </div>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="py-20 reveal">
-            <h2 class="section-title">Project Portfolio</h2>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="card p-4 flex flex-col items-center">
-                    <img src="project1.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
-                    <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 1</h3>
-                    <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
-                    <a href="#" class="text-teal-300 underline text-sm">View Details</a>
-                </div>
-                <div class="card p-4 flex flex-col items-center">
-                    <img src="project2.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
-                    <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 2</h3>
-                    <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
-                    <a href="#" class="text-teal-300 underline text-sm">View Details</a>
-                </div>
+        <!-- Portfolio Section with Filters -->
+        <section id="portfolio" class="py-20">
+            <h2 class="section-title">Featured Projects</h2>
+              <!-- Project Filters -->
+            <div class="flex flex-wrap gap-4 mb-8 justify-center">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="data-science">Data Science</button>
+                <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+                <button class="filter-btn" data-filter="deep-learning">Deep Learning</button>
+                <button class="filter-btn" data-filter="ai">Artificial Intelligence</button>
+                <button class="filter-btn" data-filter="web-dev">Web Development</button>
+                <button class="filter-btn" data-filter="visualization">Data Visualization</button>
+                <button class="filter-btn" data-filter="research">Research</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
+                <button class="filter-btn" data-filter="nlp">Natural Language Processing</button>
             </div>
-            <div id="portfolio-extra" class="hidden">
-                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-4">
-                    <div class="card p-4 flex flex-col items-center">
-                        <img src="project3.png" alt="Project Screenshot" class="w-full h-32 object-cover rounded mb-3 bg-slate-800" />
-                        <h3 class="font-bold text-lg text-gray-100 mb-1">Project Title 3</h3>
-                        <p class="text-gray-400 text-sm mb-2">Short project description goes here.</p>
-                        <a href="#" class="text-teal-300 underline text-sm">View Details</a>
+
+            <!-- Project Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Card 1 -->
+                <div class="project-card" data-category="data-science">
+                    <div class="project-image">
+                        <img src="project1.jpg" alt="Project 1" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="View Project"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" aria-label="View Code"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info p-6">
+                        <h3 class="project-title">AI-Powered Medical Diagnosis</h3>
+                        <p class="project-desc">Deep learning system for medical image analysis and diagnosis prediction.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">OpenCV</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="text-center">
-                <button id="portfolio-extra-btn" class="bg-teal-400/10 text-teal-300 border border-teal-300 px-6 py-3 rounded-md hover:bg-teal-400/20 transition-colors" onclick="toggleSection('portfolio-extra')">Show More</button>
+
+                <!-- Add more project cards here -->
             </div>
         </section>
 
@@ -496,190 +674,11 @@
     }
     </script>
 
-    <script src="marked.min.js"></script>
-    <!-- TEMP: Disable all custom JS for debugging -->
-    <!-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // ...all JS temporarily disabled...
-    });
-    </script> -->
-
     <!-- Back to Top Button -->
-    <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-8 right-8 bg-teal-400 text-slate-900 px-4 py-2 rounded-full shadow-lg hover:bg-teal-300 z-50" style="display:none;">↑ Top</button>
-    <script>
-    window.addEventListener('scroll', function() {
-        document.getElementById('backToTop').style.display = window.scrollY > 400 ? 'block' : 'none';
-    });
-    </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Remove loading overlay
-        const loadingOverlay = document.querySelector('.loading-overlay');
-        window.addEventListener('load', () => {
-            loadingOverlay.style.opacity = '0';
-            setTimeout(() => {
-                loadingOverlay.style.display = 'none';
-            }, 500);
-        });
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-        // Scroll reveal animation
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const scrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => {
-            scrollObserver.observe(el);
-        });
-
-        // Active nav link
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        function setActiveLink() {
-            let index = sections.length;
-            while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
-            navLinks.forEach(link => link.classList.remove('active'));
-            navLinks[index]?.classList.add('active');
-        }
-
-        window.addEventListener('scroll', setActiveLink);
-        setActiveLink();
-
-        // Mobile menu
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuBtn.querySelector('i').classList.toggle('fa-bars');
-            menuBtn.querySelector('i').classList.toggle('fa-times');
-        });
-
-        // Close mobile menu on click outside
-        document.addEventListener('click', (e) => {
-            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-                menuBtn.querySelector('i').classList.add('fa-bars');
-                menuBtn.querySelector('i').classList.remove('fa-times');
-            }
-        });
-
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.classList.contains('timeline-item')) {
-                        entry.target.classList.add('slide-in');
-                    } else {
-                        entry.target.classList.add('fade-in');
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // Observe all elements that should animate
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-    });
-    </script>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Progress bar
-        const progressBar = document.querySelector('.progress-bar');
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            progressBar.style.width = scrolled + '%';
-        });
-
-        // Floating navigation
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.floating-nav a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Theme toggle
-        const themeToggle = document.querySelector('.theme-toggle');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-        
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        }
-
-        // Initialize theme
-        const savedTheme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
-        setTheme(savedTheme);
-
-        // Theme toggle click handler
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
-        });
-
-        // Handle system theme changes
-        prefersDark.addEventListener('change', (e) => {
-            setTheme(e.matches ? 'dark' : 'light');
-        });
-
-        // Smooth scroll behavior
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    });
-    </script>
-
+    <script src="js/main.js"></script>
 </body>
 </html>
