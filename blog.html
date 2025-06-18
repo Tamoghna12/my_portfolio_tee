@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Tamoghna Das</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-glass">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold">TD</a>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link hover:text-teal-300 transition-colors">Home</a>
+                    <a href="blog.html" class="nav-link hover:text-teal-300 transition-colors active">Blog</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-teal-300 focus:outline-none">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden hidden bg-slate-900/95 backdrop-blur-sm mt-4 rounded-lg">
+                <a href="index.html" class="block py-3 px-4 hover:text-teal-300 transition-colors">Home</a>
+                <a href="blog.html" class="block py-3 px-4 hover:text-teal-300 transition-colors">Blog</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 pt-32">
+        <h1 class="text-4xl font-bold mb-8">Blog Posts</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
+            <!-- Blog posts will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <script>
+        // Function to parse frontmatter
+        function parseFrontmatter(markdown) {
+            const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
+            const match = markdown.match(frontmatterRegex);
+            
+            if (!match) return null;
+            
+            const frontmatter = match[1];
+            const metadata = {};
+            frontmatter.split('\n').forEach(line => {
+                const [key, ...values] = line.split(':');
+                if (key && values.length > 0) {
+                    metadata[key.trim()] = values.join(':').trim();
+                }
+            });
+            
+            return metadata;
+        }
+
+        // Function to create blog card
+        function createBlogCard(metadata, slug) {
+            return `
+                <article class="card p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <h2 class="text-2xl font-bold mb-2">${metadata.title}</h2>
+                    <div class="blog-meta text-sm text-gray-400 mb-4">
+                        <span class="mr-4"><i class="far fa-calendar-alt mr-2"></i>${metadata.date}</span>
+                        <span><i class="fas fa-tags mr-2"></i>${metadata.category}</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">${metadata.description}</p>
+                    <a href="blog/posts/${slug}.html" class="btn btn-primary inline-block">Read More</a>
+                </article>
+            `;
+        }
+
+        // Load blog posts
+        async function loadBlogPosts() {
+            try {
+                const posts = [
+                    'why-i-love-data-science.md'
+                    // Add more posts here as you create them
+                ];
+
+                const blogGrid = document.getElementById('blog-grid');
+                
+                for (const post of posts) {
+                    const response = await fetch(`blog/posts/${post}`);
+                    if (!response.ok) continue;
+                    
+                    const markdown = await response.text();
+                    const metadata = parseFrontmatter(markdown);
+                    if (!metadata) continue;
+
+                    const slug = post.replace('.md', '');
+                    blogGrid.innerHTML += createBlogCard(metadata, slug);
+                }
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+            }
+        }
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Load posts when page loads
+        document.addEventListener('DOMContentLoaded', loadBlogPosts);
+    </script>
+</body>
+</html>
